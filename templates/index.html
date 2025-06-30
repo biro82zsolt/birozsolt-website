@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bíró Zsolt pszichológus</title>
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <style>
+     body {
+        background-color: var(--bs-body-bg);
+        color: var(--bs-body-color);
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    .hero {
+        background-color: #0d6efd;
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    .section {
+        padding: 40px 0;
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    footer {
+        background-color: #212529;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    .nav-link {
+        font-weight: 500;
+    }
+    .navbar-nav .nav-link {
+    font-size: 0.9rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    }
+
+    body.dark-mode {
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+    body.dark-mode .navbar,
+    body.dark-mode footer {
+        background-color: #1f1f1f;
+    }
+    body.dark-mode .hero {
+        background-color: #333;
+    }
+    body.dark-mode .section.bg-light {
+        background-color: #1f1f1f !important;
+    }
+    body.dark-mode .card {
+        background-color: #2c2c2c;
+        border-color: #333;
+        color: #f0f0f0;
+    }
+    body.dark-mode .card .btn {
+        background-color: #0d6efd;
+        color: #fff;
+    }
+
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bíró Zsolt pszichológus</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Navigáció váltása"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/egyeni">Egyéni tanácsadás</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/csoportos">Csoportos tanácsadás</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/sportpszichologia">Sportpszichológia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/diagnosztika">Diagnosztika</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/coaching">Coaching</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/csalad">Család- és párterápia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/podcast">Podcast</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/kapcsolat">Kapcsolat</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/index_en">English</a>
+        </li>
+      </ul>
+        <button id="toggleDark" class="btn btn-outline-light ms-2" title="Sötét/Világos mód">🌙 / ☀️</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1>Üdvözlöm!</h1>
+        <p class="lead">Tanácsadó szakpszichológus, sportszakpszichológus, relaxációs terapeuta</p>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <img src="https://via.placeholder.com/600x400" class="img-fluid rounded" alt="Pszichológus portré">
+            </div>
+            <div class="col-md-6">
+                <h2>Rólam</h2>
+                <p>
+                    Többféle módszerrel és szemlélettel támogatom klienseimet a fejlődésben, a mindennapi kihívások leküzdésében, és a sportban való kiteljesedésben. Hivatásom alapja a hiteles, bizalmi kapcsolat kialakítása és a szakmai igényesség.
+                </p>
+                <ul>
+                    <li>Tanácsadó szakpszichológus – pálya és munkatanácsadás</li>
+                    <li>Sportszakpszichológus</li>
+                    <li>Relaxációs terapeuta</li>
+                    <li>Kiképzésben lévő család- és párterapeuta</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="section bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Szolgáltatások</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Egyéni tanácsadás</h5>
+                        <p class="card-text">
+                            Támogató légkörben dolgozunk személyes kihívásain, elakadásokon, stresszkezelésen.
+                        </p>
+                        <a href="/egyeni" class="btn btn-primary">Tovább</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Csoportos tanácsadás</h5>
+                        <p class="card-text">
+                            Tréningek cégeknek, sportcsapatoknak, edzőknek: együttműködés, motiváció, mentális egészség.
+                        </p>
+                        <a href="/csoportos" class="btn btn-primary">Tovább</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Sportpszichológia</h5>
+                        <p class="card-text">
+                            Teljesítmény optimalizálása, fókusz, versenyszorongás kezelése egyéni sportolóknak és csapatoknak.
+                        </p>
+                        <a href="/sportpszichologia" class="btn btn-primary">Tovább</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Diagnosztika, állapotfelmérés</h5>
+                        <p class="card-text">
+                            Pszichológiai mérések cégeknek, sportcsapatoknak: együttműködés, motiváció, mentális egészség.
+                        </p>
+                        <a href="/diagnosztika" class="btn btn-primary">Tovább</a>
+                        <a href="/kerdoiv" class="btn btn-primary">Próbáld ki!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Coaching</h5>
+                        <p class="card-text">
+                            A tanácsadás speciális formája, ahol megoldásfókusszal dolgozunk...
+                        </p>
+                        <a href="/coaching" class="btn btn-primary">Tovább</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Pár- és családterápia</h5>
+                        <p class="card-text">
+                            Párterápia, válásmenedzsment, mediáció.
+                        </p>
+                        <a href="/csalad" class="btn btn-primary">Tovább</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Podcast Section -->
+<section class="section">
+    <div class="container text-center">
+        <h2>Lehet hibázni - Podcast</h2>
+        <p>
+            Hallgassa meg a podcastomat a Z75 Production YouTube-csatornán!
+        </p>
+        <a href="/podcast" class="btn btn-outline-primary">Podcast oldal</a>
+        <p>
+        <a href="/kapcsolat" class="btn btn-primary btn-lg mt-3">Időpontegyeztetés</a>
+        </p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Bíró Zsolt pszichológus | Minden jog fenntartva</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Dark mode toggle script -->
+<script>
+    const toggleButton = document.getElementById('toggleDark');
+    const body = document.body;
+
+    // Ellenőrizzük, van-e elmentett mód
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-mode');
+    }
+
+    toggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        // Mentjük a választást
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
+</script>
+</body>
+</html>
