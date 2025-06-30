@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Podcast – Bíró Zsolt pszichológus</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      background-color: var(--bs-body-bg);
+      color: var(--bs-body-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    footer {
+      background-color: #212529;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+    body.dark-mode footer {
+      background-color: #1f1f1f;
+    }
+    iframe {
+      max-width: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bíró Zsolt pszichológus</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Navigáció váltása"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/egyeni">Egyéni tanácsadás</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/csoportos">Csoportos tanácsadás</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/sportpszichologia">Sportpszichológia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/diagnosztika">Diagnosztika</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/coaching">Coaching</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/csalad">Család- és párterápia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/podcast">Podcast</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/kapcsolat">Kapcsolat</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/en">English</a>
+        </li>
+      </ul>
+      <button id="toggleDark" class="btn btn-outline-light ms-3">🌙 / ☀️</button>
+    </div>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container py-5 text-center">
+    <h1 class="mb-4">Lehet hibázni – Podcast</h1>
+    <p>
+      A podcastomban pszichológiai, sportpszichológiai és mindennapi témákat dolgozok fel, tabuk nélkül. Hallgasd meg a legfrissebb epizódokat!
+    </p>
+
+    <div class="my-4">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed?listType=user_uploads&list=z75production" title="YouTube videók" allowfullscreen></iframe>
+    </div>
+
+    <a href="https://www.youtube.com/@z75production" target="_blank" class="btn btn-primary">
+      Megnézem a YouTube csatornát
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Bíró Zsolt pszichológus | Minden jog fenntartva</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const toggleButton = document.getElementById("toggleDark");
+  const body = document.body;
+
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark-mode");
+  }
+
+  toggleButton.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+    if (body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  });
+</script>
+</body>
+</html>
