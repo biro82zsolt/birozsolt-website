@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bíró Zsolt pszichológus</title>
-    <meta name="description" content="Bíró Zsolt pszichológus – egyéni és csoportos tanácsadás, sportpszichológia, coaching Debrecenben. Időpontfoglalás online.">
     <!-- Bootstrap CSS -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -16,12 +15,11 @@
         color: var(--bs-body-color);
         transition: background-color 0.4s ease, color 0.4s ease;
     }
-    .hero-slim {
-        background-color: #f8f9fa; /* világosszürke háttér */
-        color: #333;
-        padding: 20px 0;
+    .hero {
+        background-color: #0d6efd;
+        color: white;
+        padding: 60px 20px;
         text-align: center;
-        border-bottom: 1px solid #ddd; /* finom elválasztó vonal */
         transition: background-color 0.4s ease, color 0.4s ease;
     }
     .section {
@@ -43,6 +41,7 @@
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     }
+
     body.dark-mode {
         background-color: #121212;
         color: #e0e0e0;
@@ -51,10 +50,8 @@
     body.dark-mode footer {
         background-color: #1f1f1f;
     }
-    body.dark-mode .hero-slim {
-        background-color: #1f1f1f;
-        color: #e0e0e0;
-        border-bottom: 1px solid #444;
+    body.dark-mode .hero {
+        background-color: #333;
     }
     body.dark-mode .section.bg-light {
         background-color: #1f1f1f !important;
@@ -68,13 +65,6 @@
         background-color: #0d6efd;
         color: #fff;
     }
-    .justify {
-        text-align: justify;
-    }
-    .card-text {
-        text-align: justify;
-    }
-
 
     </style>
 </head>
@@ -131,10 +121,11 @@
 </nav>
 
 <!-- Hero Section -->
-<section class="hero-slim">
-  <div class="container">
-      <p class="mb-0 small">Tanácsadás és sportpszichológia online és személyesen Debrecenben</p>
-  </div>
+<section class="hero">
+    <div class="container">
+        <h1>Üdvözlöm!</h1>
+        <p class="lead">Tanácsadó szakpszichológus, sportszakpszichológus, relaxációs terapeuta</p>
+    </div>
 </section>
 
 <!-- About Section -->
@@ -142,20 +133,18 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6 mb-4 mb-md-0">
-                <img src="{{ url_for('static', filename='images/profilkep.png') }}" class="img-fluid rounded" width="600" height="400" alt="Pszichológus portré">
+                <img src="{{ url_for('static', filename='images/profilkep.png') }}" class="img-fluid rounded" alt="Pszichológus portré">
             </div>
             <div class="col-md-6">
                 <h2>Rólam</h2>
-                <p class="justify">
+                <p>
                     Többféle módszerrel és szemlélettel támogatom klienseimet a fejlődésben, a mindennapi kihívások leküzdésében, és a sportban való kiteljesedésben. Hivatásom alapja a hiteles, bizalmi kapcsolat kialakítása és a szakmai igényesség.
                 </p>
-
-                <p class="justify">
-                    Első diplomámat a Kölcsey Ferenc Református Tanítóképző Főiskolán szereztem 2007-ben. Eközben már aktívan végeztem a pszichológia szakot a Debreceni Egyetemen, ahol 2010-ben diplomáztam pszichológus, és pszichológus angol szakfordítóként.
-                    2016-ban az ELTE Tanácsadó szakpszichológus képzésén pálya és munkatanácsadás specializáción diplomáztam.
-                    2019-ben pedig a SOTE-n Sportszakpszichológus képzését végeztem el. Módszerspecifikus képzések közül a Magyar Relaxációs és Szimbólumterápiás Egyesület Autogén tréning terapeuta képzésén végeztem 2016-ban.
-                    Jelenleg kiképzésben lévő család- és párterapeuta vagyok.
-                </p>
+                <ul>
+                    <li>Tanácsadó szakpszichológus – pálya és munkatanácsadás</li>
+                    <li>Sportszakpszichológus</li>
+                    <li>Relaxációs terapeuta</li>
+                    <li>Kiképzésben lévő család- és párterapeuta</li>
                 </ul>
             </div>
         </div>
@@ -208,7 +197,7 @@
                             Pszichológiai mérések cégeknek, sportcsapatoknak: együttműködés, motiváció, mentális egészség.
                         </p>
                         <a href="/diagnosztika" class="btn btn-primary">Tovább</a>
-                        <a href="/kerdoiv" class="btn btn-primary">Kipróbálom!</a>
+                        <a href="/kerdoiv" class="btn btn-primary">Próbáld ki!</a>
                     </div>
                 </div>
             </div>
@@ -217,7 +206,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Coaching</h5>
                         <p class="card-text">
-                            A coaching egy célorientált támogatási forma, amely segít a problémák megoldásában és a fejlődési lehetőségek felismerésében.
+                            A tanácsadás speciális formája, ahol megoldásfókusszal dolgozunk...
                         </p>
                         <a href="/coaching" class="btn btn-primary">Tovább</a>
                     </div>
@@ -228,7 +217,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Pár- és családterápia</h5>
                         <p class="card-text">
-                            A párterápia, a válásmenedzsment és a mediáció támogatja a kapcsolati nehézségek rendezését.
+                            Párterápia, válásmenedzsment, mediáció.
                         </p>
                         <a href="/csalad" class="btn btn-primary">Tovább</a>
                     </div>
