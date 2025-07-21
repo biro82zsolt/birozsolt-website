@@ -21,3 +21,4 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         server-dir: /public_html/
         local-dir: ./   # Ha például HTML-fájlok a gyökérben vannak
+        protocol: ftps
