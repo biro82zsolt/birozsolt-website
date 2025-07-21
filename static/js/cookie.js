@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
         const message = isHungarian
             ? `Ez a weboldal sütiket használ a jobb felhasználói élmény érdekében. <a href="/adatvedelem" style="color: #0d6efd;">További információ</a>`
-            : `This website uses cookies to improve user experience. <a href="/en/privacy" style="color: #0d6efd;">Learn more</a>`;
+            : `This website uses cookies to improve user experience. <a href="/privacy" style="color: #0d6efd;">Learn more</a>`;
 
         const buttonText = isHungarian ? "Értettem" : "Got it";
 
