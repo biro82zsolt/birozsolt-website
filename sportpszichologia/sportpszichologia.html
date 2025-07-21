@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sportpszichológia – Bíró Zsolt pszichológus</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      background-color: var(--bs-body-bg);
+      color: var(--bs-body-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    footer {
+      background-color: #212529;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+    .navbar-nav .nav-link {
+    font-size: 0.9rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    }
+    body.dark-mode footer {
+      background-color: #1f1f1f;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Bíró Zsolt pszichológus</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Navigáció váltása"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/egyeni">Egyéni tanácsadás</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/csoportos">Csoportos tanácsadás</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/sportpszichologia">Sportpszichológia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/diagnosztika">Diagnosztika</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/coaching">Coaching</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/csalad">Család- és párterápia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/podcast">Podcast</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/kapcsolat">Kapcsolat</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/sportpsychology">English</a>
+        </li>
+      </ul>
+      <button id="toggleDark" class="btn btn-outline-light ms-2">🌙 / ☀️</button>
+    </div>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container py-5">
+    <h1 class="mb-4">Sportpszichológia</h1>
+    <p>
+      A sportpszichológiai tanácsadás célja a sportolók és edzők mentális felkészültségének fejlesztése, a teljesítmény optimalizálása, valamint a sporttal járó kihívások, szorongások és stressz kezelése.
+    </p>
+    <h3 class="mt-4">Milyen témákban tudok segíteni?</h3>
+    <ul>
+      <li>Teljesítményszorongás csökkentése</li>
+      <li>Fókusz és koncentráció fejlesztése</li>
+      <li>Motiváció fenntartása hosszú távon</li>
+      <li>Mentális felkészülés versenyekre</li>
+      <li>Edző-sportoló kommunikáció támogatása</li>
+    </ul>
+    <p class="mt-4">
+      A tanácsadás során személyre szabott módszerekkel dolgozunk, hogy Ön vagy csapata a lehető legjobb formáját hozza a pályán és azon kívül is.
+    </p>
+    <a href="/kapcsolat" class="btn btn-primary mt-3">Időpontegyeztetés</a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Bíró Zsolt pszichológus | Minden jog fenntartva</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const toggleButton = document.getElementById("toggleDark");
+  const body = document.body;
+
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark-mode");
+  }
+
+  toggleButton.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+    if (body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  });
+</script>
+</body>
+</html>

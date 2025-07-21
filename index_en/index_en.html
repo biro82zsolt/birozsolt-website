@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zsolt Bíró Psychologist</title>
+  <meta name="description" content="Zsolt Bíró psychologist – individual and group counseling, sports psychology, coaching in Debrecen, Hungary. Book your appointment online.">
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      background-color: var(--bs-body-bg);
+      color: var(--bs-body-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    .hero-slim {
+        background-color: #f8f9fa; /* világosszürke háttér */
+        color: #333;
+        padding: 20px 0;
+        text-align: center;
+        border-bottom: 1px solid #ddd; /* finom elválasztó vonal */
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    .section {
+      padding: 40px 0;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    footer {
+      background-color: #212529;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    .nav-link {
+      font-weight: 500;
+    }
+    .navbar-nav .nav-link {
+    font-size: 0.9rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    }
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+    body.dark-mode .navbar,
+    body.dark-mode footer {
+      background-color: #1f1f1f;
+    }
+    body.dark-mode .hero-slim {
+      background-color: #1f1f1f;
+      color: #e0e0e0;
+      border-bottom: 1px solid #444;
+    }
+    body.dark-mode .section.bg-light {
+      background-color: #1f1f1f !important;
+    }
+    body.dark-mode .card {
+      background-color: #2c2c2c;
+      border-color: #333;
+      color: #f0f0f0;
+    }
+    body.dark-mode .card .btn {
+      background-color: #0d6efd;
+      color: #fff;
+    }
+    .justify {
+      text-align: justify;
+    }
+    .card-text {
+      text-align: justify;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/en">Zsolt Bíró Psychologist</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/individual">Individual Counseling</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/group">Group Counseling</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/sportpsychology">Sport Psychology</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/diagnostic">Diagnostics</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/coaching_en">Coaching</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/family">Family & Couples Therapy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/podcast">Podcast</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/">Magyar</a>
+        </li>
+      </ul>
+      <button id="toggleDark" class="btn btn-outline-light ms-2">🌙 / ☀️</button>
+    </div>
+  </div>
+</nav>
+
+  <!-- Hero Section -->
+<section class="hero-slim">
+  <div class="container">
+    <p class="mb-0 small">Counseling and sports psychology available online and in person in Debrecen</p>
+  </div>
+</section>
+
+  <!-- About Section -->
+  <section class="section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+                <img src="{{ url_for('static', filename='images/profilkep.png') }}" class="img-fluid rounded" width="600" height="400" alt="Pszichológus portré">
+            </div>
+        <div class="col-md-6">
+          <h2>About Me</h2>
+          <p class="justify">
+            I support my clients through a variety of methods and approaches in their
+            personal development, overcoming everyday challenges, and achieving fulfillment in sports.
+            My professional work is based on building authentic,
+            trust-based relationships and maintaining high professional standards.
+          </p>
+          <p class="justify">
+            I obtained my first degree at the Kölcsey Ferenc Reformed Teacher Training College in 2007.
+            During this time, I was already pursuing psychology studies at the University of Debrecen,
+            where I graduated in 2010 as a psychologist and an English translator specialized in psychology.
+            In 2016, I earned a degree in counseling psychology with a specialization in career and vocational guidance at Eötvös Loránd University (ELTE). In 2019, I completed the sports psychology training program at Semmelweis University. Among other method-specific trainings, I completed the Autogenic Training Therapist program of the Hungarian Association for Relaxation and Symbol Therapy in 2016.
+            I am currently in training to become a qualified couples and family therapist.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Services</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Individual Counseling</h5>
+              <p class="card-text">
+                In a supportive environment, we work together on personal
+                challenges, difficulties, and stress management.
+              </p>
+              <a href="/individual" class="btn btn-primary">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Group Counseling</h5>
+              <p class="card-text">
+                Trainings for companies, sports teams, and coaches:
+                collaboration, motivation, and mental health.
+              </p>
+              <a href="/group" class="btn btn-primary">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Sport Psychology</h5>
+              <p class="card-text">
+                Performance optimization, focus, and managing competitive
+                anxiety for individual athletes and teams.
+              </p>
+              <a href="/sportpsychology" class="btn btn-primary">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Diagnostics</h5>
+              <p class="card-text">
+                Diagnostics and psychological assessments for companies and sport teams.
+              </p>
+              <a href="/diagnostic" class="btn btn-primary">Read more</a>
+              <a href="/questionnaire" class="btn btn-primary">Try it!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Coaching</h5>
+              <p class="card-text">
+                Coaching is a goal-oriented form of support that helps identify solutions and personal development opportunities.
+              </p>
+              <a href="/coaching_en" class="btn btn-primary">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Couple and Family Therapy</h5>
+              <p class="card-text">
+                Couple therapy, divorce management, and mediation help address relationship challenges.
+              </p>
+              <a href="/family" class="btn btn-primary">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Podcast Section -->
+  <section class="section">
+    <div class="container text-center">
+      <h2>Lehet hibázni – Podcast (Hungarian)</h2>
+      <p>
+        Listen to my podcast on the Z75 Production YouTube channel!
+      </p>
+      <a href="/podcast" class="btn btn-outline-primary">Podcast Page</a>
+    </div>
+    <div class="container text-center">
+      <p>
+
+      <a href="/contact" class="btn btn-primary btn-lg mt-3"
+        >Schedule an Appointment
+      </a
+      </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Zsolt Bíró Psychologist | All rights reserved</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Dark mode toggle script -->
+  <script>
+    const toggleButton = document.getElementById("toggleDark");
+    const body = document.body;
+
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark-mode");
+    }
+
+    toggleButton.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      if (body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.setItem("theme", "light");
+      }
+    });
+  </script>
+</body>
+</html>
