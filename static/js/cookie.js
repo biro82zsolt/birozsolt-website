@@ -1,13 +1,13 @@
 window.addEventListener('DOMContentLoaded', function () {
     if (!localStorage.getItem('cookieConsentAccepted')) {
-        const lang = navigator.language || navigator.userLanguage;
-        const isHungarian = lang.startsWith('hu');
+        const lang = document.documentElement.lang || 'hu';
+        const isEnglish = lang.startsWith('en');
 
-        const message = isHungarian
-            ? `Ez a weboldal sütiket használ a jobb felhasználói élmény érdekében. <a href="/adatvedelem" style="color: #0d6efd;">További információ</a>`
-            : `This website uses cookies to improve user experience. <a href="/privacy" style="color: #0d6efd;">Learn more</a>`;
+        const message = isEnglish
+            ? `This website uses cookies to improve user experience. <a href="/privacy" style="color: #0d6efd;">Learn more</a>`
+            : `Ez a weboldal sütiket használ a jobb felhasználói élmény érdekében. <a href="/adatvedelem" style="color: #0d6efd;">További információ</a>`;
 
-        const buttonText = isHungarian ? "Értettem" : "Got it";
+        const buttonText = isEnglish ? "Got it" : "Értettem";
 
         const banner = document.createElement('div');
         banner.innerHTML = `
