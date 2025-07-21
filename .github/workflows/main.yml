@@ -1,0 +1,23 @@
+name: Deploy website to Tarhely.eu via FTP
+
+on:
+  push:
+    branches:
+      - main  # vagy master, attól függ, mi a főágad neve
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@v3
+
+    - name: Upload to Tarhely.eu via FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ftp.tarhely.eu
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: /public_html/
+        local-dir: ./   # Ha például HTML-fájlok a gyökérben vannak
