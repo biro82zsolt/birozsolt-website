@@ -268,20 +268,36 @@
     const toggleButton = document.getElementById('toggleDark');
     const body = document.body;
 
-    // Ellenőrizzük, van-e elmentett mód
     if (localStorage.getItem('theme') === 'dark') {
         body.classList.add('dark-mode');
     }
 
+    function closeNavbarIfOpen() {
+        const navbarCollapse = document.getElementById('navbarNav');
+        if (navbarCollapse.classList.contains('show')) {
+            const collapseInstance = bootstrap.Collapse.getInstance(navbarCollapse)
+                || new bootstrap.Collapse(navbarCollapse, { toggle: false });
+            collapseInstance.hide();
+        }
+    }
+
     toggleButton.addEventListener('click', () => {
         body.classList.toggle('dark-mode');
-        // Mentjük a választást
         if (body.classList.contains('dark-mode')) {
             localStorage.setItem('theme', 'dark');
         } else {
             localStorage.setItem('theme', 'light');
         }
+        closeNavbarIfOpen();
+    });
+
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            closeNavbarIfOpen();
+        });
     });
 </script>
+
+
 </body>
 </html>

@@ -121,21 +121,38 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  const toggleButton = document.getElementById("toggleDark");
-  const body = document.body;
+    const toggleButton = document.getElementById('toggleDark');
+    const body = document.body;
 
-  if (localStorage.getItem("theme") === "dark") {
-    body.classList.add("dark-mode");
-  }
-
-  toggleButton.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
-    if (body.classList.contains("dark-mode")) {
-      localStorage.setItem("theme", "dark");
-    } else {
-      localStorage.setItem("theme", "light");
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-mode');
     }
-  });
+
+    function closeNavbarIfOpen() {
+        const navbarCollapse = document.getElementById('navbarNav');
+        if (navbarCollapse.classList.contains('show')) {
+            const collapseInstance = bootstrap.Collapse.getInstance(navbarCollapse)
+                || new bootstrap.Collapse(navbarCollapse, { toggle: false });
+            collapseInstance.hide();
+        }
+    }
+
+    toggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+        closeNavbarIfOpen();
+    });
+
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            closeNavbarIfOpen();
+        });
+    });
 </script>
+
 </body>
 </html>
