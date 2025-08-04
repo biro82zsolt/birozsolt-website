@@ -3,14 +3,14 @@ name: Deploy website to Tarhely.eu via FTP
 on:
   push:
     branches:
-      - main  # vagy master, attól függ, mi a főágad neve
+      - main  # Vagy a főágad neve
 
 jobs:
   ftp-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Get latest code
+    - name: Checkout latest code
       uses: actions/checkout@v3
 
     - name: Upload to Tarhely.eu via FTP
@@ -20,5 +20,19 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         server-dir: /public_html/
-        local-dir: ./   # Ha például HTML-fájlok a gyökérben vannak
+        local-dir: ./   # A projekt gyökere
         protocol: ftps
+        exclude: |
+          **/.git*
+          **/.github*
+          **/.venv*
+          **/venv*
+          **/__pycache__*
+          **/shelf/*
+          **/workspace.xml
+          **/*.db
+          **/*.sqlite3
+          **/*.pyc
+          **/*.pyo
+          **/*.pyd
+          **/*.png

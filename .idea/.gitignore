@@ -1,12 +1,32 @@
 # Default ignored files
+cat <<EOF > .gitignore
+EOF
+
+# IDE
 /shelf/
 /workspace.xml
-cat <<EOF > .gitignore
+.idea/
+.vscode/
+
+# Python cache
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-*.db
+
+# Virtual env
 venv/
 .env
-EOF
+.venv/
+env/
+
+# Local DB and test files
+*.db
+*.sqlite3
+
+# Temporary files
+.DS_Store
+
+# Generated diagrams
+sportmotivacio/*.png
+
