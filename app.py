@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, send_file, send_from_directory
 import pandas as pd
 import matplotlib.pyplot as plt
-import os
+import sys, os
 from reportlab.lib.pagesizes import A4
 from reportlab.platypus import BaseDocTemplate, Paragraph, Spacer, Image, Frame, PageTemplate
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
@@ -10,6 +10,8 @@ from reportlab.lib.enums import TA_JUSTIFY
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from io import BytesIO
+
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'python_modules'))
 
 # --- Flask app ---
 app = Flask(__name__)
