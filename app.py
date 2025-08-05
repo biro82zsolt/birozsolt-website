@@ -9,7 +9,7 @@ def home():
 
 @app.route("/en")
 def home_en():
-    return render_template("en/index_en.html")
+    return render_template("en/index.html")
 
 @app.route("/egyeni")
 def egyeni():
