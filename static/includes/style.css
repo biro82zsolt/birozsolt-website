@@ -1,0 +1,96 @@
+/* Alap body stílus */
+body {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hero szakasz */
+.hero-slim {
+  background-color: #f8f9fa;
+  color: #333;
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Általános szakasz */
+.section {
+  padding: 40px 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Lábléc */
+footer {
+  background-color: #212529;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navigációs linkek */
+.nav-link {
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link {
+  font-size: 0.9rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+/* Aktív menüpont */
+.navbar-nav .nav-link.active {
+  color: #0d6efd !important;
+  font-weight: 600;
+  border-bottom: 2px solid #0d6efd;
+}
+
+/* Sötét mód */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .navbar,
+body.dark-mode footer {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode .hero-slim {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+  border-bottom: 1px solid #444;
+}
+
+body.dark-mode .section.bg-light {
+  background-color: #1f1f1f !important;
+}
+
+body.dark-mode .card {
+  background-color: #2c2c2c;
+  border-color: #333;
+  color: #f0f0f0;
+}
+
+body.dark-mode .card .btn {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+/* Aktív menüpont sötét módban */
+body.dark-mode .navbar-nav .nav-link.active {
+  color: #66b2ff !important;
+  border-bottom: 2px solid #66b2ff;
+}
+
+/* Igazított szövegek */
+.justify {
+  text-align: justify;
+}
+
+.card-text {
+  text-align: justify;
+}
