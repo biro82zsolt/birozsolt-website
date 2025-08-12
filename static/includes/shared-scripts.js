@@ -1,5 +1,6 @@
 // shared-scripts.js (debug verzió)
 
+// Rész HTML betöltése
 function loadPartial(id, path, callback) {
   fetch(path)
     .then(res => {
@@ -7,7 +8,12 @@ function loadPartial(id, path, callback) {
       return res.text();
     })
     .then(html => {
-      document.getElementById(id).innerHTML = html;
+      const host = document.getElementById(id);
+      if (!host) {
+        console.warn(`⚠ Nem található host elem: #${id}`);
+        return;
+      }
+      host.innerHTML = html;
       if (typeof callback === "function") callback();
     })
     .catch(err => console.error(err));
@@ -64,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // English gomb cél módosítása
+    // English gomb cél módosítása (pl. /egyeni → /individual)
     const enLink = document.querySelector('.navbar-nav .nav-link[href="/en"]');
     if (enLink && currentPath.startsWith("/egyeni")) {
       enLink.setAttribute("href", "/individual");
