@@ -3,7 +3,7 @@
 .navbar .nav-link.active:focus,
 .navbar .nav-link.active:hover {
   color: #fff !important;
-  background-color: #0d6efd !important; /* kék chip */
+   /* kék chip */
   border-radius: .375rem;
   font-weight: 600;
   border-bottom: none !important; /* nehogy más szabály aláhúzza */
@@ -30,7 +30,7 @@ body.dark-mode footer {
 body.dark-mode .navbar .nav-link.active,
 body.dark-mode .navbar .nav-link.active:focus,
 body.dark-mode .navbar .nav-link.active:hover {
-  background-color: #2b72d6 !important; /* világosabb kék sötét háttéren */
+   /* világosabb kék sötét háttéren */
   color: #fff !important;
 }
 
