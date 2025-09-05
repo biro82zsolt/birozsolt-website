@@ -90,6 +90,38 @@ def sportscience_index():
 @app.route("/adatvedelem")
 def adatvedelem_index():
     return render_template("adatvedelem/index.html")
+
+@app.route("/sporttudomany/wellness.html")
+def wellness_index():
+    return render_template("sporttudomany/wellness.html")
+
+@app.route("/sporttudomany/tehetseg.html")
+def tehetseg_index():
+    return render_template("sporttudomany/tehetseg.html")
+
+@app.route("/sporttudomany/terheles.html")
+def terheles_index():
+    return render_template("sporttudomany/terheles.html")
+
+@app.route("/sporttudomany/workshopok.html")
+def workshopok_index():
+    return render_template("sporttudomany/workshopok.html")
+
+@app.route("/sportscience/wellness-en.html")
+def wellnessen_index():
+    return render_template("sportscience/wellness-en.html")
+
+@app.route("/sportscience/talent-id.html")
+def talentid_index():
+    return render_template("sportscience/talent-id.html")
+
+@app.route("/sportscience/training-load.html")
+def trainingload_index():
+    return render_template("sportscience/training-load.html")
+
+@app.route("/sportscience/workshops.html")
+def workshops_index():
+    return render_template("sportscience/workshops.html")
 # --- Run ---
 if __name__ == "__main__":
     app.run(debug=True)

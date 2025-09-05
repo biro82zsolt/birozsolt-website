@@ -89,3 +89,24 @@ html.dark-mode .related-sport .btn.btn-outline-dark:focus {
   color: #121212;
   border-color: #e6e6e6;
 }
+
+/* Középre rendezett, finom tipó a hero szövegnek */
+.hero-tagline {
+  font-weight: 500;
+  letter-spacing: .2px;
+}
+
+/* Ha kell, halványabb háttér-átmenet (opcionális) */
+.hero-slim {
+  background-color: transparent;
+  transition: background-color .3s ease, color .3s ease;
+}
+
+/* Sötét módban a border színe már felül van írva, így a vonal jól látszik.
+   Ha még kontrasztosabbat szeretnél, ezt old fel a kommentből: */
+/*
+html.dark-mode .hero-slim {
+  background-color: #161616;
+}
+*/
+
