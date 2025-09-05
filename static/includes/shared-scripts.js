@@ -110,7 +110,7 @@
       }
     }
     var looksHU = /(sporttudomany|egyeni|csoportos|sportpszichologia|diagnosztika|coaching|csalad|podcast|kerdoiv|kapcsolat|rolam|hu)/.test(path) || path === '/';
-    return { href: looksHU ? '/en' : '/sporttudomany', targetLang: looksHU ? 'en':'hu', sourceLang: looksHU ? 'hu':'en' };
+    return { href: looksHU ? '/en' : '/', targetLang: looksHU ? 'en':'hu', sourceLang: looksHU ? 'hu':'en' };
   }
 
   function ensureHrefLangLinks(currentPath, altPath, targetLang){
