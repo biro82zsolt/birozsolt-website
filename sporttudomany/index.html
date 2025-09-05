@@ -1,0 +1,206 @@
+<!-- =============================
+FILE: /sporttudomany/index.html (HU)
+Tarhely.eu statikus oldal – áttekintő/hub a sporttudományi tartalmakhoz
+============================= -->
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        document.documentElement.style.backgroundColor = "#121212";
+        document.documentElement.classList.add("dark-mode");
+      }
+    })();
+  </script>
+
+  <title>Sporttudomány – Áttekintő | Bíró Zsolt</title>
+
+  <!-- SEO / Open Graph -->
+  <meta name="description" content="Sporttudományi hub: antropometria, kérdőívek, edzésterhelés-követés, eszközök és útmutatók társszakmák számára." />
+  <meta property="og:title" content="Sporttudomány – Áttekintő" />
+  <meta property="og:description" content="Sportpszichológián túli megoldások: kérdőívek, mérések, adatkezelés és gyakorlati útmutatók." />
+  <meta property="og:type" content="website" />
+
+    <!-- hreflang alternates -->
+<link rel="alternate" href="/sporttudomany/" hreflang="hu" />
+<link rel="alternate" href="/sportscience/" hreflang="en" />
+<link rel="canonical" href="/sporttudomany/" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Saját CSS -->
+  <link rel="stylesheet" href="/static/includes/style.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico" />
+
+  <!-- Cookie figyelmeztetés -->
+  <script src="/static/js/cookie.js" defer></script>
+</head>
+<body>
+
+<!-- Header betöltése -->
+<div id="header-placeholder"></div>
+
+<main class="section">
+  <div class="container py-5">
+
+    <header class="mb-4">
+      <h1 class="mb-3">Sporttudomány</h1>
+      <p class="lead mb-0">Összefoglaló oldal a sportpszichológián túli megoldásaimhoz: mérés, kérdőívek, adatvezérelt támogatás edzőknek, gyógytornászoknak és pedagógusoknak.</p>
+    </header>
+
+    <!-- Kiemelt megoldások -->
+<section class="mt-4">
+  <h2 class="h4 mb-3">Kiemelt</h2>
+  <div class="row g-4">
+    <!-- Antropometria (külső kalkulátor + helyi oldal) -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100">
+        <div class="card-body position-relative">
+          <h3 class="h5 card-title mb-2">Antropometria</h3>
+          <p class="card-text">MK, PLX, VTTM – standardizált mérés és visszajelzés. Helyi ismertető és hivatkozások.</p>
+          <!-- Fő link (stretched) az externális kalkulátorhoz -->
+          <a href="https://anthro-web.onrender.com/" target="_blank" rel="noopener noreferrer" class="stretched-link" aria-label="Antropometriai kalkulátor megnyitása"></a>
+          <div class="d-flex flex-wrap gap-2 mt-2">
+            <a href="https://anthro-web.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">Kalkulátor megnyitása</a>
+            <span class="text-muted small align-self-center"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Wellness kérdőív -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100">
+        <div class="card-body position-relative">
+          <h3 class="h5 card-title mb-2">Wellness kérdőív</h3>
+          <p class="card-text">Egyszerű napi/heti monitorozás (alvás, fáradtság, izomláz, stressz). Exportálható összefoglalók.</p>
+          <a class="stretched-link" href="/sporttudomany/wellness.html" aria-label="Wellness kérdőív"></a>
+        </div>
+      </div>
+    </div>
+    <!-- Edzésterhelés-követés -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100">
+        <div class="card-body position-relative">
+          <h3 class="h5 card-title mb-2">Edzésterhelés-követés</h3>
+          <p class="card-text">Session-RPE, akut:krónikus arány és trendek. Mintaexcel és útmutató.</p>
+          <a class="stretched-link" href="/sporttudomany/terheles.html" aria-label="Edzésterhelés-követés"></a>
+        </div>
+      </div>
+    </div>
+    <!-- Tehetségazonosítás -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100">
+        <div class="card-body position-relative">
+          <h3 class="h5 card-title mb-2">Tehetségazonosítás</h3>
+          <p class="card-text">Életkori és biológiai tényezők, mérési protokollok, etikai megfontolások.</p>
+          <a class="stretched-link" href="/sporttudomany/tehetseg.html" aria-label="Tehetségazonosítás"></a>
+        </div>
+      </div>
+    </div>
+    <!-- Workshopok -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100">
+        <div class="card-body position-relative">
+          <h3 class="h5 card-title mb-2">Workshopok</h3>
+          <p class="card-text">Edzői és iskolai műhelyek: mérés, adatkezelés, értelmezés.</p>
+          <a class="stretched-link" href="/sporttudomany/workshopok.html" aria-label="Workshopok"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Gyors linkek -->
+    <section class="mt-5">
+      <h2 class="h4 mb-3">Gyors linkek</h2>
+      <div class="d-flex flex-wrap gap-2">
+        <a class="btn btn-primary" href="https://anthro-web.onrender.com/" target="_blank" rel="noopener">Antropometriai kalkulátor</a>
+      </div>
+    </section>
+
+    <!-- GYIK -->
+    <section class="mt-5">
+      <h2 class="h4 mb-3">Gyakori kérdések</h2>
+      <div class="accordion" id="faqHu">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="huhu1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#hu1" aria-expanded="true" aria-controls="hu1">
+              Miért külön oldal a sportpszichológián túl?
+            </button>
+          </h2>
+          <div id="hu1" class="accordion-collapse collapse show" aria-labelledby="huhu1" data-bs-parent="#faqHu">
+            <div class="accordion-body">Ez az áttekintő a társszakmák számára készített mérési és adatkezelési eszközöket gyűjti össze, hogy egy helyről legyenek elérhetők.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="huhu2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hu2" aria-expanded="false" aria-controls="hu2">
+              Lesznek angol nyelvű anyagok?
+            </button>
+          </h2>
+          <div id="hu2" class="accordion-collapse collapse" aria-labelledby="huhu2" data-bs-parent="#faqHu">
+            <div class="accordion-body">Igen, a <a href="/sportscience/">Sport Science</a> oldalon érhetők el.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kapcsolat -->
+    <section id="kapcsolat" class="mt-5">
+      <div class="border rounded p-4">
+        <h2 class="h4 mb-2">Kapcsolat</h2>
+        <p class="mb-3">Kérdésed van valamelyik eszközzel kapcsolatban? Írj nyugodtan.</p>
+        <div class="d-flex flex-wrap gap-2">
+          <a href="/kapcsolat" class="btn btn-dark">Időpontkérés / Üzenet</a>
+          <a href="mailto:birozsolt.pszi@gmail.com" class="btn btn-outline-secondary">E-mail küldése</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- Footer betöltése -->
+<div id="footer-placeholder"></div>
+
+<!-- Bootstrap bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Közös JS (header/footer + dark mode) -->
+<script src="/static/includes/shared-scripts.js"></script>
+
+<!-- Strukturált adat -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Sporttudomány – Áttekintő",
+  "description": "Sportpszichológián túli eszközök és tartalmak gyűjtőoldala.",
+  "inLanguage": "hu-HU"
+}
+</script>
+
+
+<!-- Footer betöltése -->
+<div id="footer-placeholder"></div>
+
+<!-- Bootstrap bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Közös JS (header/footer + nyelvváltó + dark mode + évszám) -->
+<script src="/static/includes/shared-scripts.js?v=fix-ready"></script>
+</body>
+</html>
+
+</body>
+</html>
+

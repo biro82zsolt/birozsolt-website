@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Early theme to avoid FOUC -->
   <script>
     (function() {
       const savedTheme = localStorage.getItem("theme");
@@ -16,6 +17,7 @@
   </script>
 
   <title>Egyéni tanácsadás – Bíró Zsolt pszichológus</title>
+  <meta name="description" content="Egyéni pszichológiai tanácsadás: stresszkezelés, szorongásoldás, karriertámogatás, önismeret, döntéshozatal és sport mentális felkészítés." />
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -26,8 +28,8 @@
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico" />
 
-  <!-- Cookie figyelmeztetés -->
-  <script src="/static/js/cookie.js"></script>
+  <!-- Cookie figyelmeztetés (globálisan egyszer betöltve ajánlott) -->
+  <script src="/static/js/cookie.js" defer></script>
 </head>
 <body>
 
@@ -35,7 +37,7 @@
 <div id="header-placeholder"></div>
 
 <!-- Oldalspecifikus tartalom -->
-<section class="section">
+<main class="section" role="main">
   <div class="container py-5">
     <h1 class="mb-4">Egyéni tanácsadás</h1>
     <p>
@@ -55,7 +57,7 @@
     </p>
     <a href="/kapcsolat" class="btn btn-primary mt-3">Időpontegyeztetés</a>
   </div>
-</section>
+</main>
 
 <!-- Footer betöltése -->
 <div id="footer-placeholder"></div>
@@ -63,7 +65,7 @@
 <!-- Bootstrap bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Közös JS (kezeli a header/footer betöltést és a sötét módot) -->
-<script src="/static/includes/shared-scripts.js"></script>
+<!-- Közös JS (header/footer + nyelvváltó + dark mode + évszám) -->
+<script src="/static/includes/shared-scripts.js?v=fix-ready"></script>
 </body>
 </html>

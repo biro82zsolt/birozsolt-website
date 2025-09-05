@@ -79,7 +79,17 @@ def kerdoiv_index():
 def questionnaire_index():
     return render_template("questionnaire/index.html")
 
+@app.route("/sporttudomany")
+def sporttudomany_index():
+    return render_template("sporttudomany/index.html")
 
+@app.route("/sportscience")
+def sportscience_index():
+    return render_template("sportscience/index.html")
+
+@app.route("/adatvedelem")
+def adatvedelem_index():
+    return render_template("adatvedelem/index.html")
 # --- Run ---
 if __name__ == "__main__":
     app.run(debug=True)

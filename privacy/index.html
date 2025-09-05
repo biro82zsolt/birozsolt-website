@@ -3,17 +3,41 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Privacy Policy – Zsolt Bíró, psychologist</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-</head>
-<body class="bg-light text-dark">
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="/en">Zsolt Bíró – Psychologist</a>
-  </div>
-</nav>
+
+  <!-- Early theme to avoid FOUC -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        document.documentElement.style.backgroundColor = "#121212";
+        document.documentElement.classList.add("dark-mode");
+      }
+    })();
+  </script>
+
+  <title>Privacy Policy – Zsolt Bíró, psychologist</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Saját CSS -->
+  <link rel="stylesheet" href="/static/includes/style.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico" />
+
+  <!-- Cookie figyelmeztetés (globálisan egyszer betöltve ajánlott) -->
+  <script src="/static/js/cookie.js" defer></script>
+</head>
+<body>
+
+<!-- Header betöltése -->
+<div id="header-placeholder"></div>
+
+<!-- Oldalspecifikus tartalom -->
+<main class="section" role="main">
 
 <!-- Hero -->
 <section class="hero-slim text-center py-4">
@@ -50,10 +74,13 @@
   </p>
 </main>
 
-<!-- Footer -->
-<footer class="bg-dark text-white text-center py-3">
-    &copy; 2025 Zsolt Bíró – All rights reserved
-</footer>
+<!-- Footer betöltése -->
+<div id="footer-placeholder"></div>
 
+<!-- Bootstrap bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Közös JS (header/footer + nyelvváltó + dark mode + évszám) -->
+<script src="/static/includes/shared-scripts.js?v=fix-ready"></script>
 </body>
 </html>
