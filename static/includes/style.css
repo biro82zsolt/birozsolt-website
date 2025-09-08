@@ -72,23 +72,24 @@ footer {
 }
 
 /* Sötét módban kontrasztosabb háttér/keret és szöveg */
-html.dark-mode .related-sport {
+body.dark-mode .related-sport {
   background-color: #1f1f1f;
   border-color: #2a2a2a;
   color: #e6e6e6;
 }
 
 /* Gomb olvashatósága sötét módban – outline-dark maradhat, de kap egy kis boostot */
-html.dark-mode .related-sport .btn.btn-outline-dark {
+body.dark-mode .related-sport .btn.btn-outline-dark {
   color: #e6e6e6;
   border-color: #8a8a8a;
 }
-html.dark-mode .related-sport .btn.btn-outline-dark:hover,
-html.dark-mode .related-sport .btn.btn-outline-dark:focus {
+body.dark-mode .related-sport .btn.btn-outline-dark:hover,
+body.dark-mode .related-sport .btn.btn-outline-dark:focus {
   background-color: #e6e6e6;
   color: #121212;
   border-color: #e6e6e6;
 }
+
 
 /* Középre rendezett, finom tipó a hero szövegnek */
 .hero-tagline {
