@@ -94,9 +94,46 @@
   xyzzy: {
     hu: "A varázsszavak játékban működnek – az életben a cselekvés a kulcs.",
     en: "Magic words work in games – in life action is the real magic."
-  }
-};
+  },
+  // "Bullshit" kifejezések
+  aura: {
+    hu: "Az aurahegesztés jól hangzik, de a lelki egészséghez szakmai támogatásra van szükség.",
+    en: "Aura welding sounds mystical, but real mental health needs professional support."
+  },
+  rontas: {
+    hu: "A rontáslevétel nem tudomány – a bizonyítékokon alapuló pszichológia viszont segíthet.",
+    en: "Curse removal isn’t science – but evidence-based psychology can help."
+  },
+  curse: {
+    hu: "A rontáslevétel nem tudomány – a bizonyítékokon alapuló pszichológia viszont segíthet.",
+    en: "Curse removal isn’t science – but evidence-based psychology can help."
+  },
+  csakra: {
+    hu: "A csakranyitás szép metafora, de az önismerethez valódi munka kell.",
+    en: "Opening chakras is a nice metaphor, but real self-knowledge takes work."
+  },
+  chakra: {
+    hu: "A csakranyitás szép metafora, de az önismerethez valódi munka kell.",
+    en: "Opening chakras is a nice metaphor, but real self-knowledge takes work."
+  },
+  boszorkanyszures: {
+    hu: "A boszorkányszűrés inkább mese, mint módszer – az önreflexió viszont valódi erő.",
+    en: "Witch screening is folklore – but self-reflection is true power."
+  },
+  witchscreening: {
+    hu: "A boszorkányszűrés inkább mese, mint módszer – az önreflexió viszont valódi erő.",
+    en: "Witch screening is folklore – but self-reflection is true power."
+  },
+  negativenergia: {
+    hu: "A negatív energiák helyett a tudatos gondolkodás és önismeret segít előre lépni.",
+    en: "Instead of banishing negative energies, mindful thinking and self-awareness help us move forward."
+  },
+  karma: {
+  hu: "A karmát nem lehet egy varázsszóval feloldani – a múlt terheit a feldolgozás és az elfogadás könnyíti meg.",
+  en: "Karma can’t be erased with a magic word – healing the past comes through processing and acceptance."
+  },
 
+};
 
     let buffer = "";
 
