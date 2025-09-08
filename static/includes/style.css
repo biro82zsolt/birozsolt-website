@@ -110,4 +110,47 @@ html.dark-mode .hero-slim {
   background-color: #161616;
 }
 */
+/* Easter egg popup – safe, responsive, dark-mode */
+:root{
+  --ee-bg:#ffffff; --ee-fg:#222222; --ee-overlay:rgba(0,0,0,0.6);
+  --ee-btn-bg:#0a7bdc; --ee-btn-fg:#ffffff; --ee-btn-bg-hover:#0967b6;
+  --ee-radius:1rem; --ee-shadow:0 12px 28px rgba(0,0,0,0.28);
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ee-bg:#1f1f1f; --ee-fg:#eaeaea; --ee-overlay:rgba(0,0,0,0.7);
+    --ee-btn-bg:#2a8af6; --ee-btn-fg:#0b0b0b; --ee-btn-bg-hover:#1e6fd1;
+    --ee-shadow:0 12px 28px rgba(0,0,0,0.6);
+  }
+}
+html.dark{
+  --ee-bg:#1f1f1f; --ee-fg:#eaeaea; --ee-overlay:rgba(0,0,0,0.7);
+  --ee-btn-bg:#2a8af6; --ee-btn-fg:#0b0b0b; --ee-btn-bg-hover:#1e6fd1;
+}
+.easteregg-overlay{
+  position:fixed; inset:0; background:var(--ee-overlay);
+  display:flex; align-items:center; justify-content:center;
+  z-index:9999; padding:1rem;
+}
+.easteregg-popup{
+  background:var(--ee-bg); color:var(--ee-fg);
+  padding:clamp(1rem,3vw,2rem); border-radius:var(--ee-radius);
+  width:min(480px,100%); text-align:center; box-shadow:var(--ee-shadow);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  animation:ee-fade-in .25s ease-out both;
+}
+.easteregg-title{ margin:0 0 .75rem 0; font-size:clamp(1.1rem,2.5vw,1.35rem); line-height:1.3; }
+.easteregg-text{ margin:0 0 1rem 0; line-height:1.55; font-size:clamp(.95rem,2.2vw,1rem); }
+.easteregg-actions{ display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; }
+.easteregg-btn{
+  background:var(--ee-btn-bg); color:var(--ee-btn-fg); border:none;
+  padding:.6rem 1.1rem; border-radius:.6rem; cursor:pointer;
+  transition:background .2s ease, transform .06s ease; font-weight:600;
+}
+.easteregg-btn:hover{ background:var(--ee-btn-bg-hover); }
+.easteregg-btn:active{ transform:translateY(1px); }
+.easteregg-btn:focus-visible{ outline:2px solid currentColor; outline-offset:3px; }
+@keyframes ee-fade-in{ from{opacity:0;transform:translateY(6px) scale(.99)} to{opacity:1;transform:translateY(0) scale(1)} }
+
+
 

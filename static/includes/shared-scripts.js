@@ -220,3 +220,16 @@
     });
   });
 })();
+
+// Dinamikusan betöltjük az easter egg scriptet MINDEN oldalon
+(function () {
+  try {
+    var s = document.createElement('script');
+    s.src = '/static/js/shared-easteregg.js';
+    s.defer = true;
+    document.body.appendChild(s);
+  } catch (e) {
+    console.warn('Easter egg loader error:', e);
+  }
+})();
+
