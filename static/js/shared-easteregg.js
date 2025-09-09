@@ -202,6 +202,11 @@ function getTypeForKey(key){
         en: "Graboiov numbers aren’t magic codes – real change comes from our actions, not from numbers."
       },
 
+      graboiov: {
+        hu: "A Grabojov-számok nem varázskódok – a változást nem a számok, hanem a cselekedeteink hozzák el.",
+        en: "Graboiov numbers aren’t magic codes – real change comes from our actions, not from numbers."
+      },
+
       csepp: {
         hu: "A csodacseppek nem oldják meg helyettünk a problémákat – a változás a tudatos döntéseinkből fakad.",
         en: "Miracle drops won’t solve our problems – change comes from conscious choices."
