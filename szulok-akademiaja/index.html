@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Early theme to avoid FOUC -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        document.documentElement.style.backgroundColor = "#121212";
+        document.documentElement.classList.add("dark-mode");
+      }
+    })();
+  </script>
+
+  <title>Szülők Akadémiája – Bíró Zsolt pszichológus</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Saját CSS -->
+  <link rel="stylesheet" href="/static/includes/style.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico" />
+
+  <!-- Cookie figyelmeztetés -->
+  <script src="/static/js/cookie.js" defer></script>
+</head>
+<body>
+
+<!-- Header betöltése -->
+<div id="header-placeholder"></div>
+
+<!-- Oldalspecifikus tartalom -->
+<main class="section" role="main">
+  <div class="container py-5 text-center">
+    <h1 class="mb-4">Szülők Akadémiája – Sportszülőknek</h1>
+    <p>
+      Öt alkalmas, kiscsoportos (max. 15 fős) foglalkozássorozat sportpszichológus és
+      mentálhigiénés szakember vezetésével, kifejezetten <strong>sportszülőknek</strong>.
+    </p>
+    <p style="text-align: justify;">
+      A program célja, hogy támogassa a szülőket abban, hogyan segíthetik gyermeküket
+      a <em>versenyhelyzetek kezelésében</em>, a <em>sikerek és kudarcok feldolgozásában</em>,
+      valamint az <em>egészséges egyensúly</em> megteremtésében a sport, az iskola és a család között.
+    </p>
+    <p style="text-align: justify;">
+      Interaktív beszélgetések, gyakorlati példák és szakmai útmutatás révén olyan eszközöket adunk,
+      amelyekkel a szülők magabiztosabban állhatnak gyermekük sportolói útja mellett.
+    </p>
+    <p>
+      📅 Időpontok: 2025. október 20-tól, 5 héten át<br/>
+      ⏰ Időtartam: 60 perc / alkalom<br/>
+      👥 Létszám: max. 15 fő<br/>
+      💻 Formátum: online<br/>
+      <br/>
+      Vezetik:<br/>
+      Hankovszky Dóra mentálhigiénés szakember, sportmentáltréner (Sándor Károly Labdarúgó Akadémia)<br/>
+      Bíró Zsolt sportpszichológus, tanácsadó szakpszichológus (DVSC Labdarúgó Akadémia)
+    </p>
+
+    <div class="my-4">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/RSBTmsPTljo?si=1gh8CfCKXQDhql6w"
+        title="Bemutatkozó videó"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Tematika -->
+    <div class="text-start mt-5">
+      <h2 class="text-center mb-4">🏅 Szülők Akadémiája – Tematika</h2>
+
+      <h4>1. alkalom – Szülői szerep a sportban - október 20.</h4>
+      <ul>
+        <li>Mit jelent „sportszülőnek” lenni?</li>
+        <li>A támogató háttér fontossága</li>
+        <li>Nyomás, elvárások és a motiváció kérdése</li>
+      </ul>
+
+      <h4>2. alkalom – Kommunikáció edzővel és gyerekkel - október 27.</h4>
+      <ul>
+        <li>Hogyan támogassam a gyermekemet kudarc és siker esetén?</li>
+        <li>Edző–szülő–gyermek háromszög: együttműködés a gyakorlatban</li>
+        <li>„Szurkolói” kommunikáció – hogyan segítsek, ne ártsak?</li>
+      </ul>
+
+      <h4>3. alkalom – Teljesítmény, szorongás és versenyhelyzetek - november 4.</h4>
+      <ul>
+        <li>Versenydrukk kezelése gyermeknél és szülőnél</li>
+        <li>Reális célkitűzés és elvárások</li>
+        <li>Kudarcélmények feldolgozása és motiváció fenntartása</li>
+      </ul>
+
+      <h4>4. alkalom – Egyensúly a sport, iskola és magánélet között - november 11.</h4>
+      <ul>
+        <li>Időgazdálkodás családban és sportban</li>
+        <li>A regeneráció és pihenés szerepe</li>
+        <li>Hogyan támogathatja a szülő a gyermeke testi-lelki egészségét?</li>
+      </ul>
+
+      <h4>5. alkalom – Erőforrások és jövőkép - november 18.</h4>
+      <ul>
+        <li>Hogyan építhetek hosszú távon egészséges szülő–gyermek kapcsolatot a sportban?</li>
+        <li>Kitartás, önbizalom, küzdeni tudás mint életre szóló készségek</li>
+        <li>Visszajelzés, tapasztalatok megosztása, záró beszélgetés</li>
+      </ul>
+    </div>
+
+    <div class="mt-5">
+      <a href="https://forms.gle/idekerulamajelentkezesiurl" target="_blank" class="btn btn-primary">
+        Jelentkezem a programra
+      </a>
+    </div>
+  </div>
+</main>
+
+<!-- Footer betöltése -->
+<div id="footer-placeholder"></div>
+
+<!-- Bootstrap bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Közös JS -->
+<script src="/static/includes/shared-scripts.js?v=fix-ready"></script>
+</body>
+</html>
