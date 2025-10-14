@@ -1,38 +1,48 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="/">Bíró Zsolt pszichológus</a>
+<!-- Skip link: billentyűzetes navigációhoz -->
+<a class="visually-hidden-focusable" href="#main">Ugrás a tartalomra</a>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Bíró Zsolt pszichológus</a>
 
 
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Navigáció váltása"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Navigáció váltása"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="/egyeni">Egyéni tanácsadás</a></li>
-        <li class="nav-item"><a class="nav-link" href="/csoportos">Csoportos tanácsadás</a></li>
-        <li class="nav-item"><a class="nav-link" href="/sportpszichologia">Sportpszichológia</a></li>
-        <li class="nav-item"><a class="nav-link" href="/diagnosztika">Diagnosztika</a></li>
-        <li class="nav-item"><a class="nav-link" href="/coaching">Coaching</a></li>
-        <li class="nav-item"><a class="nav-link" href="/csalad">Család- és párterápia</a></li>
-        <li class="nav-item"><a class="nav-link" href="/podcast">Podcast</a></li>
-        <li class="nav-item"><a class="nav-link" href="/kapcsolat">Kapcsolat</a></li>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/egyeni">Egyéni tanácsadás</a></li>
+          <li class="nav-item"><a class="nav-link" href="/csoportos">Csoportos tanácsadás</a></li>
+          <li class="nav-item"><a class="nav-link" href="/sportpszichologia">Sportpszichológia</a></li>
+          <li class="nav-item"><a class="nav-link" href="/diagnosztika">Diagnosztika</a></li>
+          <li class="nav-item"><a class="nav-link" href="/coaching">Coaching</a></li>
+          <li class="nav-item"><a class="nav-link" href="/csalad">Család- és párterápia</a></li>
+          <li class="nav-item"><a class="nav-link" href="/podcast">Podcast</a></li>
+          <li class="nav-item"><a class="nav-link" href="/kapcsolat">Kapcsolat</a></li>
 
-        <!-- NYELVVÁLTÓ: href/label JS-ből állítódik (initLangSwitch) -->
-        <li class="nav-item">
-          <a id="lang-switch" class="nav-link" href="#" aria-label="Váltás angol nyelvre">EN</a>
-        </li>
-      </ul>
+          <!-- NYELVVÁLTÓ: href/label JS-ből állítódik (initLangSwitch) -->
+          <li class="nav-item">
+            <a id="lang-switch" class="nav-link" href="#" aria-label="Váltás angol nyelvre">EN</a>
+          </li>
+        </ul>
 
-      <button id="toggleDark" class="btn btn-outline-light ms-2">🌙 / ☀️</button>
+        <button id="toggleDark" class="btn btn-outline-light ms-2">🌙 / ☀️</button>
+      </div>
     </div>
-  </div>
-</nav>
+    <form class="d-flex ms-3" role="search" action="/kereses" method="get">
+      <input class="form-control form-control-sm me-2" type="search" name="q" placeholder="Keresés…" aria-label="Keresés">
+      <button class="btn btn-outline-light btn-sm" type="submit">OK</button>
+    </form>
+
+  </nav>
+</header>

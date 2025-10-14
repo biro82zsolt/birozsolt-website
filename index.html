@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <!-- Early theme to avoid FOUC -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Early theme to avoid FOUC -->
   <script>
     (function() {
       const savedTheme = localStorage.getItem("theme");
@@ -15,32 +16,90 @@
     })();
   </script>
 
-    <title>Bíró Zsolt pszichológus</title>
-    <meta name="description" content="Bíró Zsolt pszichológus – egyéni és csoportos tanácsadás, sportpszichológia, coaching Debrecenben. Időpontfoglalás online.">
+  <title>Bíró Zsolt pszichológus – sportpszichológia és tanácsadás Debrecenben</title>
+  <meta name="description" content="Egyéni és csoportos tanácsadás, sportpszichológia, coaching Debrecenben és online. Időpontegyeztetés.">
+
+  <!-- Canonical + hreflang (HU főoldal) -->
+  <link rel="canonical" href="https://zsoltbiro.hu/">
+  <link rel="alternate" href="https://zsoltbiro.hu/" hreflang="hu">
+  <link rel="alternate" href="https://zsoltbiro.hu/en/" hreflang="en">
+  <link rel="alternate" href="https://zsoltbiro.hu/" hreflang="x-default">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="hu_HU">
+  <meta property="og:site_name" content="zsoltbiro.hu">
+  <meta property="og:title" content="Bíró Zsolt pszichológus – sportpszichológia és tanácsadás Debrecenben">
+  <meta property="og:description" content="Egyéni és csoportos tanácsadás, sportpszichológia, coaching Debrecenben és online.">
+  <meta property="og:url" content="https://zsoltbiro.hu/">
+  <meta property="og:image" content="https://zsoltbiro.hu/static/images/og-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bíró Zsolt pszichológus – sportpszichológia és tanácsadás Debrecenben">
+  <meta name="twitter:description" content="Egyéni és csoportos tanácsadás, sportpszichológia, coaching Debrecenben és online.">
+  <meta name="twitter:image" content="https://zsoltbiro.hu/static/images/og-image.jpg">
+
+  <!-- Teljesítmény apróságok -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Saját CSS -->
-  <link rel="stylesheet" href="/static/includes/style.css" />
+  <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+  <link rel="stylesheet" href="/static/includes/style.css">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico" />
-
-  <!-- Cookie figyelmeztetés (globálisan egyszer betöltve ajánlott) -->
+  <!-- Cookie figyelmeztetés -->
   <script src="/static/js/cookie.js" defer></script>
+
+  <!-- Strukturált adatok (Person + WebSite) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bíró Zsolt",
+    "jobTitle": "Pszichológus, sportpszichológus",
+    "url": "https://zsoltbiro.hu",
+    "image": "https://zsoltbiro.hu/static/images/profilkep.png",
+    "address": { "@type": "PostalAddress", "addressLocality": "Debrecen", "addressCountry": "HU" },
+    "sameAs": [
+      "https://www.instagram.com/birozsolt_sportspy"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "url":"https://zsoltbiro.hu",
+    "name":"zsoltbiro.hu",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://zsoltbiro.hu/kereses?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
 </head>
+
 <body>
+
+<!-- Skip link -->
+<a class="visually-hidden-focusable" href="#main">Ugrás a tartalomra</a>
 
 <!-- Header betöltése -->
 <div id="header-placeholder"></div>
 
-<!-- Hero Section -->
-<section class="hero-slim border-top border-bottom">
-  <div class="container py-3 text-center">
+<!-- Láthatatlan H1 a keresőnek/olvasóknak -->
+<h1 class="visually-hidden">Bíró Zsolt – pszichológus és sportpszichológus Debrecenben és online</h1>
+
+<main id="main">
+  <!-- Hero Section -->
+  <section class="hero-slim border-top border-bottom">
+    <div class="container py-3 text-center">
       <p class="mb-0 small hero-tagline">Tanácsadás és sportpszichológia online és személyesen Debrecenben</p>
-  </div>
-</section>
+    </div>
+  </section>
 
 <!-- About Section -->
 <section class="section">
@@ -48,7 +107,11 @@
         <div class="row align-items-center">
             <div
                     class="col-md-6 mb-4 mb-md-0">
-                <img src="/static/images/profilkep.png" class="img-fluid rounded" width="600" height="400" alt="portré">
+                <img src="/static/images/profilkep.png"
+     class="img-fluid rounded"
+     width="600" height="400"
+     alt="Bíró Zsolt pszichológus és sportpszichológus – portré"
+     loading="lazy" decoding="async">
             </div>
             <div class="col-md-6">
                 <h2>Rólam</h2>
@@ -62,7 +125,6 @@
                     2019-ben pedig a SOTE-n Sportszakpszichológus képzését végeztem el. Módszerspecifikus képzések közül a Magyar Relaxációs és Szimbólumterápiás Egyesület Autogén tréning terapeuta képzésén végeztem 2016-ban.
                     Jelenleg kiképzésben lévő család- és párterapeuta vagyok.
                 </p>
-                </ul>
             </div>
         </div>
     </div>
@@ -188,6 +250,7 @@
         </p>
     </div>
 </section>
+</main>
 
 <!-- Footer betöltése -->
 <div id="footer-placeholder"></div>

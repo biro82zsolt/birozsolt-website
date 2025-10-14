@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <title>Keresés – zsoltbiro.hu</title>
+  <meta name="description" content="Keresés a zsoltbiro.hu oldal tartalmában." />
+
+  <!-- Canonical + hreflang -->
+  <link rel="canonical" href="https://zsoltbiro.hu/kereses" />
+  <link rel="alternate" href="https://zsoltbiro.hu/kereses" hreflang="hu" />
+  <link rel="alternate" href="https://zsoltbiro.hu/search" hreflang="en" />
+  <link rel="alternate" href="https://zsoltbiro.hu/" hreflang="x-default" />
+
+  <!-- Open Graph / Twitter (opcionális, de hasznos) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="zsoltbiro.hu" />
+  <meta property="og:title" content="Keresés – zsoltbiro.hu" />
+  <meta property="og:description" content="Keresés a zsoltbiro.hu oldal tartalmában." />
+  <meta property="og:url" content="https://zsoltbiro.hu/kereses" />
+  <meta property="og:image" content="https://zsoltbiro.hu/static/images/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Keresés – zsoltbiro.hu" />
+  <meta name="twitter:description" content="Keresés a zsoltbiro.hu oldal tartalmában." />
+  <meta name="twitter:image" content="https://zsoltbiro.hu/static/images/og-image.jpg" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- SearchAction strukturált adat (HU target) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "url":"https://zsoltbiro.hu",
+    "name":"zsoltbiro.hu",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://zsoltbiro.hu/kereses?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
+
+  <style>
+    /* Skip link a11y-hoz */
+    .visually-hidden-focusable {
+      position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+    }
+    .visually-hidden-focusable:focus,
+    .visually-hidden-focusable:active {
+      position: static; width: auto; height: auto;
+      margin: .5rem; padding: .5rem .75rem; background: #ffd;
+      border: 2px solid #333; border-radius: .25rem;
+    }
+  </style>
+</head>
+<body class="container py-4">
+
+  <!-- Ugrás a találatokhoz -->
+  <a class="visually-hidden-focusable" href="#main">Ugrás a találatokhoz</a>
+
+  <header class="mb-3">
+    <h1 class="h3 m-0">Keresés</h1>
+  </header>
+
+  <main id="main">
+    <!-- Kereső űrlap -->
+    <form class="row g-2 mb-4" id="site-search-form" role="search" action="/kereses" method="get">
+      <div class="col-auto">
+        <label class="visually-hidden" for="q">Keresett kifejezés</label>
+        <input class="form-control" type="search" name="q" id="q" placeholder="Keresés…" aria-label="Keresés" />
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-primary" type="submit">Keresés</button>
+      </div>
+    </form>
+
+    <!-- Élő régió: találati összegzés -->
+    <div id="results-info" class="small text-muted mb-2" aria-live="polite"></div>
+
+    <!-- Találati lista -->
+    <div id="results" class="list-group" aria-label="Keresési találatok"></div>
+  </main>
+
+  <!-- Fuse.js (könnyű fuzzy kereső) -->
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+  <script>
+    (async function() {
+      const params = new URLSearchParams(location.search);
+      const query = (params.get('q') || '').trim();
+      const qInput = document.getElementById('q');
+      const info = document.getElementById('results-info');
+      const list = document.getElementById('results');
+
+      // URL-ből érkező lekérdezés kitöltése
+      qInput.value = query;
+
+      // HU oldal → magyar index
+      const indexPath = '/static/search-index.json';
+
+      // Index betöltése
+      let data = [];
+      try {
+        const res = await fetch(indexPath, { cache: 'no-store' });
+        data = await res.json();
+      } catch (e) {
+        info.textContent = 'Nem sikerült betölteni a kereső indexet.';
+        return;
+      }
+
+      // Fuse init
+      const fuse = new Fuse(data, {
+        includeScore: true,
+        minMatchCharLength: 2,
+        threshold: 0.4,
+        keys: [
+          { name: 'title', weight: 0.6 },
+          { name: 'content', weight: 0.4 }
+        ]
+      });
+
+      let results = [];
+      if (query.length >= 2) {
+        results = fuse.search(query).slice(0, 20); // max 20 találat
+      }
+
+      // Megjelenítés
+      list.innerHTML = '';
+      if (!query) {
+        info.textContent = 'Írj be legalább 2 karaktert a kereséshez.';
+        return;
+      }
+
+      info.textContent = results.length
+        ? `${results.length} találat a(z) „${query}” kifejezésre.`
+        : `Nincs találat a(z) „${query}” kifejezésre.`;
+
+      results.forEach(r => {
+        const item = r.item;
+        const snippet = (item.content || '');
+        const short = snippet.length > 160 ? snippet.slice(0, 160) + '…' : snippet;
+
+        const a = document.createElement('a');
+        a.className = 'list-group-item list-group-item-action';
+        a.href = item.url;
+        a.innerHTML = `
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">${item.title}</h5>
+          </div>
+          <p class="mb-1">${short}</p>
+          <small class="text-muted">${item.url}</small>
+        `;
+        list.appendChild(a);
+      });
+
+      // Fókusz az első találatra (billentyűzetbarát)
+      if (results.length) {
+        const first = list.querySelector('a');
+        if (first) first.focus();
+      }
+
+      // URL frissítése beküldéskor (bookmarkolható)
+      document.getElementById('site-search-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const newQ = qInput.value.trim();
+        const url = new URL(location.href);
+        if (newQ) url.searchParams.set('q', newQ); else url.searchParams.delete('q');
+        location.href = url.toString();
+      });
+    })();
+  </script>
+</body>
+</html>

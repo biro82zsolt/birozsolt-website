@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Főoldal (HU) ↔ EN kezdőoldal -->
+  <url>
+    <loc>https://zsoltbiro.hu/</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://zsoltbiro.hu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zsoltbiro.hu/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zsoltbiro.hu/"/>
+  </url>
+
+  <!-- Egyéni tanácsadás ↔ Individual -->
+  <url>
+    <loc>https://zsoltbiro.hu/egyeni</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://zsoltbiro.hu/egyeni"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zsoltbiro.hu/individual"/>
+  </url>
+
+  <!-- Csoportos tanácsadás ↔ Group -->
+  <url>
+    <loc>https://zsoltbiro.hu/csoportos</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://zsoltbiro.hu/csoportos"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zsoltbiro.hu/group"/>
+  </url>
+
+  <!-- Sportpszichológia ↔ Sportpsychology -->
+  <url>
+    <loc>https://zsoltbiro.hu/sportpszichologia</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://zsoltbiro.hu/sportpszichologia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zsoltbiro.hu/sportpsychology"/>
+  </url>
+
+  <!-- Diagnosztika ↔ Diagnostic -->
+  <url>
+    <loc>https://zsoltbiro.hu/diagnosztika</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://zsoltbiro.hu/diagnosztika"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zsoltbiro.hu/diagnostic"/>
+  </url>
+
+  <!-- Coaching (HU) ↔ Coaching_EN -->
+  <url>
+    <loc>https://zsoltbiro.hu/coaching</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://zsoltbiro.hu/coaching"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zsoltbiro.hu/coaching_en"/>
+  </url>
+
+  <!-- Család- és párterápia ↔ Family -->
+  <url>
+    <loc>https://zsoltbiro.hu/csalad</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://zsoltbiro.hu/csalad"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zsoltbiro.hu/family"/>
+  </url>
+
+  <!-- Podcast -->
+  <url>
+    <loc>https://zsoltbiro.hu/podcast</loc>
+  </url>
+
+  <!-- Kapcsolat ↔ Contact -->
+  <url>
+    <loc>https://zsoltbiro.hu/kapcsolat</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://zsoltbiro.hu/kapcsolat"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zsoltbiro.hu/contact"/>
+  </url>
+
+  <!-- Sporttudomány ↔ Sportscience -->
+  <url>
+    <loc>https://zsoltbiro.hu/sporttudomany</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://zsoltbiro.hu/sporttudomany"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zsoltbiro.hu/sportscience"/>
+  </url>
+
+  <!-- Kérdőív ↔ Questionnaire -->
+  <url>
+    <loc>https://zsoltbiro.hu/kerdoiv</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://zsoltbiro.hu/kerdoiv"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zsoltbiro.hu/questionnaire"/>
+  </url>
+
+  <!-- Szülők Akadémiája (nincs EN pár) -->
+  <url>
+    <loc>https://zsoltbiro.hu/szulok-akademiaja</loc>
+  </url>
+
+  <!-- EN kezdőoldal külön bejegyzésként (opcionális) -->
+  <url>
+    <loc>https://zsoltbiro.hu/en</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://zsoltbiro.hu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zsoltbiro.hu/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zsoltbiro.hu/"/>
+  </url>
+
+  <!-- Kereső oldalpár -->
+  <url>
+    <loc>https://zsoltbiro.hu/kereses</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://zsoltbiro.hu/kereses"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zsoltbiro.hu/search"/>
+  </url>
+  <url>
+    <loc>https://zsoltbiro.hu/search</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://zsoltbiro.hu/kereses"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zsoltbiro.hu/search"/>
+  </url>
+
+</urlset>

@@ -126,6 +126,15 @@ def workshops_index():
 @app.route("/szulok-akademiaja")
 def szulokakademiaja_index():
     return render_template("szulok-akademiaja/index.html")
+
+@app.route("/kereses")
+def kereses():
+    return render_template("kereses/index.html")
+
+@app.route("/search")
+def search():
+    return render_template("search/index.html")
+
 # --- Run ---
 if __name__ == "__main__":
     app.run(debug=True)

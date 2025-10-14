@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Főoldal",
+    "url": "/",
+    "content": "Pszichológusi és sportpszichológiai tanácsadás Debrecenben és online. Egyéni, csoportos, coaching."
+  },
+  {
+    "title": "Egyéni tanácsadás",
+    "url": "/egyeni",
+    "content": "Személyes elakadások, stresszkezelés, megküzdés támogatása."
+  },
+  {
+    "title": "Csoportos tanácsadás",
+    "url": "/csoportos",
+    "content": "Tréningek, csapatmunka fejlesztése, motiváció, mentális egészség."
+  },
+  {
+    "title": "Sportpszichológia",
+    "url": "/sportpszichologia",
+    "content": "Teljesítmény optimalizálása, fókusz, versenyszorongás kezelése."
+  },
+  {
+    "title": "Diagnosztika",
+    "url": "/diagnosztika",
+    "content": "Pszichológiai mérések sportcsapatoknak és cégeknek."
+  },
+  {
+    "title": "Coaching",
+    "url": "/coaching",
+    "content": "Célorientált támogatás, fejlődési lehetőségek, döntéshozatal."
+  },
+  {
+    "title": "Család- és párterápia",
+    "url": "/csalad",
+    "content": "Kapcsolati nehézségek rendezése, mediáció, válásmenedzsment."
+  },
+  {
+    "title": "Podcast",
+    "url": "/podcast",
+    "content": "Lehet hibázni – podcast epizódok elérhetősége."
+  },
+  {
+    "title": "Kapcsolat",
+    "url": "/kapcsolat",
+    "content": "Időpontegyeztetés, elérhetőségek, üzenet."
+  }
+]

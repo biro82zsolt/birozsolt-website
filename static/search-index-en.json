@@ -1,0 +1,13 @@
+[
+  { "title": "Home", "url": "/en", "content": "Psychology and sport psychology counselling in Debrecen and online. Individual, group, coaching." },
+  { "title": "Individual counselling", "url": "/individual", "content": "Personal challenges, stress management, coping strategies." },
+  { "title": "Group counselling", "url": "/group", "content": "Trainings, teamwork development, motivation, mental health." },
+  { "title": "Sport psychology", "url": "/sportpsychology", "content": "Performance optimisation, focus, competition anxiety management." },
+  { "title": "Diagnostics", "url": "/diagnostic", "content": "Psychological assessments for sports teams and companies." },
+  { "title": "Coaching", "url": "/coaching_en", "content": "Goal-oriented support, development opportunities, decision-making." },
+  { "title": "Family & couples therapy", "url": "/family", "content": "Relationship issues, mediation, divorce management." },
+  { "title": "Podcast", "url": "/podcast", "content": "Lehet hibázni – podcast episodes." },
+  { "title": "Contact", "url": "/contact", "content": "Scheduling, contact details, message." },
+  { "title": "Sport science", "url": "/sportscience", "content": "Objective measurements, monitoring, anthropometry." },
+  { "title": "Questionnaire", "url": "/questionnaire", "content": "Try the questionnaire demo." }
+]
