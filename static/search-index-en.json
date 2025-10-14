@@ -1,13 +1,101 @@
 [
-  { "title": "Home", "url": "/en", "content": "Psychology and sport psychology counselling in Debrecen and online. Individual, group, coaching." },
-  { "title": "Individual counselling", "url": "/individual", "content": "Personal challenges, stress management, coping strategies." },
-  { "title": "Group counselling", "url": "/group", "content": "Trainings, teamwork development, motivation, mental health." },
-  { "title": "Sport psychology", "url": "/sportpsychology", "content": "Performance optimisation, focus, competition anxiety management." },
-  { "title": "Diagnostics", "url": "/diagnostic", "content": "Psychological assessments for sports teams and companies." },
-  { "title": "Coaching", "url": "/coaching_en", "content": "Goal-oriented support, development opportunities, decision-making." },
-  { "title": "Family & couples therapy", "url": "/family", "content": "Relationship issues, mediation, divorce management." },
-  { "title": "Podcast", "url": "/podcast", "content": "Lehet hibázni – podcast episodes." },
-  { "title": "Contact", "url": "/contact", "content": "Scheduling, contact details, message." },
-  { "title": "Sport science", "url": "/sportscience", "content": "Objective measurements, monitoring, anthropometry." },
-  { "title": "Questionnaire", "url": "/questionnaire", "content": "Try the questionnaire demo." }
+  {
+    "title": "Home",
+    "url": "/en",
+    "content": "Psychology and sport psychology counselling in Debrecen and online. Individual, group, coaching.",
+    "keywords": ["psychologist Debrecen", "sport psychologist Debrecen", "online psychologist", "counselling", "book an appointment"],
+    "synonyms": ["psychology consultation", "mental health support", "therapy info"],
+    "tags": ["home", "overview"],
+    "date": "2025-10-14"
+  },
+  {
+    "title": "Individual counselling",
+    "url": "/individual",
+    "content": "Support for personal challenges, stress management and coping.",
+    "keywords": ["individual therapy", "anxiety treatment", "depression support", "burnout", "self-confidence", "panic attacks"],
+    "synonyms": ["one-to-one counselling", "personal consultation", "life guidance", "coping skills"],
+    "tags": ["service", "individual"],
+    "date": "2025-10-14"
+  },
+  {
+    "title": "Group counselling",
+    "url": "/group",
+    "content": "Workshops and trainings to improve teamwork, motivation and mental health.",
+    "keywords": ["group training", "team building", "communication skills", "soft skills", "psychoeducation"],
+    "synonyms": ["workshop", "team coaching", "teamwork", "motivation"],
+    "tags": ["service", "group"],
+    "date": "2025-10-14"
+  },
+  {
+    "title": "Sport psychology",
+    "url": "/sportpsychology",
+    "content": "Performance optimisation, focus, and competition anxiety management.",
+    "keywords": ["sport psychologist", "performance anxiety", "pre-competition nerves", "mental preparation", "flow state", "focus", "motivation"],
+    "synonyms": ["game day nerves", "mental training", "concentration", "performance"],
+    "tags": ["service", "sport"],
+    "date": "2025-10-14"
+  },
+  {
+    "title": "Diagnostics",
+    "url": "/diagnostic",
+    "content": "Psychological assessments for sports teams and companies.",
+    "keywords": ["psychological assessment", "baseline screening", "questionnaires", "competency assessment", "team diagnostics"],
+    "synonyms": ["assessment", "testing", "psychometrics", "evaluation"],
+    "tags": ["service", "diagnostics"],
+    "date": "2025-10-14"
+  },
+  {
+    "title": "Coaching",
+    "url": "/coaching_en",
+    "content": "Goal-oriented support for development and decision-making.",
+    "keywords": ["individual coaching", "executive coaching", "career change", "goal setting", "time management", "leadership skills"],
+    "synonyms": ["coaching session", "career coaching", "decision support", "development plan"],
+    "tags": ["service", "coaching"],
+    "date": "2025-10-14"
+  },
+  {
+    "title": "Family & couples therapy",
+    "url": "/family",
+    "content": "Addressing relationship difficulties, mediation and divorce management.",
+    "keywords": ["couples therapy", "family therapy", "mediation", "relationship conflict", "improve communication", "divorce support"],
+    "synonyms": ["relationship counselling", "marital therapy", "family counselling"],
+    "tags": ["service", "relationships"],
+    "date": "2025-10-14"
+  },
+  {
+    "title": "Sport science",
+    "url": "/sportscience",
+    "content": "Objective measurements, load monitoring and anthropometry to support psychological work.",
+    "keywords": ["load monitoring", "anthropometry", "monitoring", "data-driven feedback", "coach support"],
+    "synonyms": ["sports science", "objective measures", "performance monitoring"],
+    "tags": ["companion", "sport"],
+    "date": "2025-10-14"
+  },
+  {
+    "title": "Questionnaire",
+    "url": "/questionnaire",
+    "content": "Questionnaire demo – try sample measurement tools.",
+    "keywords": ["questionnaire", "test", "self-assessment", "survey"],
+    "synonyms": ["assessment form", "screening", "measurement tool"],
+    "tags": ["tool", "diagnostics"],
+    "date": "2025-10-14"
+  },
+  {
+    "title": "Podcast",
+    "url": "/podcast",
+    "content": "Lehet hibázni – podcast episodes and where to listen (Hungarian).",
+    "keywords": ["podcast", "Lehet hibázni", "Z75 Production", "psychology podcast"],
+    "synonyms": ["show", "episodes", "audio"],
+    "tags": ["media"],
+    "date": "2025-10-14"
+  },
+  {
+    "title": "Contact",
+    "url": "/contact",
+    "content": "Book a time, contact details and message.",
+    "keywords": ["contact", "book appointment", "email", "phone", "Debrecen"],
+    "synonyms": ["get in touch", "appointment request", "message"],
+    "tags": ["contact"],
+    "date": "2025-10-14"
+  }
 ]

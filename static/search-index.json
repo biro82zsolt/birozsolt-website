@@ -2,46 +2,109 @@
   {
     "title": "Főoldal",
     "url": "/",
-    "content": "Pszichológusi és sportpszichológiai tanácsadás Debrecenben és online. Egyéni, csoportos, coaching."
+    "content": "Pszichológusi és sportpszichológiai tanácsadás Debrecenben és online. Egyéni, csoportos, coaching.",
+    "keywords": ["pszichológus debrecen", "sportpszichológus debrecen", "online pszichológus", "tanácsadás", "időpontfoglalás"],
+    "synonyms": ["pszichologiai tanacsadas", "segitsegkeres", "mentalis egeszseg"],
+    "tags": ["fő", "áttekintés"],
+    "date": "2025-10-14"
   },
   {
     "title": "Egyéni tanácsadás",
     "url": "/egyeni",
-    "content": "Személyes elakadások, stresszkezelés, megküzdés támogatása."
+    "content": "Személyes elakadások, stresszkezelés, megküzdés támogatása.",
+    "keywords": ["egyéni pszichológus", "szorongás kezelése", "depresszió támogatás", "burnout", "önbizalom", "krízis", "kiégés"],
+    "synonyms": ["egyeni konzultacio", "egyeni terapia", "eletvezetes", "megkuzdes"],
+    "tags": ["szolgáltatás", "egyéni"],
+    "date": "2025-10-14"
   },
   {
     "title": "Csoportos tanácsadás",
     "url": "/csoportos",
-    "content": "Tréningek, csapatmunka fejlesztése, motiváció, mentális egészség."
+    "content": "Tréningek, csapatmunka fejlesztése, motiváció, mentális egészség.",
+    "keywords": ["csoportos tréning", "csapatépítés", "kommunikáció fejlesztés", "soft skill", "pszichoedukáció"],
+    "synonyms": ["workshop", "team coaching", "csapatmunka", "motivacio"],
+    "tags": ["szolgáltatás", "csoport"],
+    "date": "2025-10-14"
   },
   {
     "title": "Sportpszichológia",
     "url": "/sportpszichologia",
-    "content": "Teljesítmény optimalizálása, fókusz, versenyszorongás kezelése."
+    "content": "Teljesítmény optimalizálása, fókusz, versenyszorongás kezelése.",
+    "keywords": ["sportpszichológus", "versenyszorongás", "teljesítményszorongás", "mentális felkészülés", "flow", "koncentráció", "motiváció"],
+    "synonyms": ["meccs előtti idegesség", "mentalis trening", "fokusz", "teljesitmeny", "edzésmenő"],
+    "tags": ["szolgáltatás", "sport"],
+    "date": "2025-10-14"
   },
   {
     "title": "Diagnosztika",
     "url": "/diagnosztika",
-    "content": "Pszichológiai mérések sportcsapatoknak és cégeknek."
+    "content": "Pszichológiai mérések sportcsapatoknak és cégeknek.",
+    "keywords": ["pszichológiai mérés", "állapotfelmérés", "kérdőívek", "kompetenciamérés", "csapatdiagnosztika"],
+    "synonyms": ["felmeres", "assessment", "teszt", "pszichometria"],
+    "tags": ["szolgáltatás", "diagnosztika"],
+    "date": "2025-10-14"
   },
   {
     "title": "Coaching",
     "url": "/coaching",
-    "content": "Célorientált támogatás, fejlődési lehetőségek, döntéshozatal."
+    "content": "Célorientált támogatás, fejlődési lehetőségek, döntéshozatal.",
+    "keywords": ["egyéni coaching", "executive coaching", "karrierváltás", "célkitűzés", "időgazdálkodás", "vezetői készségek", "elakadtam", "krízis"],
+    "synonyms": ["coacholas", "karrier coaching", "dontohelyzet", "fejlodesi terv"],
+    "tags": ["szolgáltatás", "coaching"],
+    "date": "2025-10-14"
   },
   {
     "title": "Család- és párterápia",
     "url": "/csalad",
-    "content": "Kapcsolati nehézségek rendezése, mediáció, válásmenedzsment."
+    "content": "Kapcsolati nehézségek rendezése, mediáció, válásmenedzsment.",
+    "keywords": ["párterápia", "családterápia", "mediáció", "kapcsolati konfliktus", "kommunikáció javítása", "válás kezelése"],
+    "synonyms": ["parterapia", "csalad terapia", "parkapcsolati tanacsadas", "valasmenedzsment"],
+    "tags": ["szolgáltatás", "kapcsolatok"],
+    "date": "2025-10-14"
+  },
+  {
+    "title": "Sporttudomány",
+    "url": "/sporttudomany",
+    "content": "Objektív mérések, terheléskövetés, antropometria a pszichológiai munka támogatására.",
+    "keywords": ["terheléskövetés", "antropometria", "monitoring", "adatvezérelt visszajelzés", "edzői támogatás"],
+    "synonyms": ["sport tudomany", "objektiv meres", "load monitoring"],
+    "tags": ["kiegészítő", "sport"],
+    "date": "2025-10-14"
+  },
+  {
+    "title": "Kérdőív",
+    "url": "/kerdoiv",
+    "content": "Kérdőív demó – kipróbálható mérőeszközök.",
+    "keywords": ["kérdőív", "teszt", "kitöltés", "önértékelés"],
+    "synonyms": ["kerdoiv", "felmeres", "meroeszkoz"],
+    "tags": ["eszköz", "diagnosztika"],
+    "date": "2025-10-14"
+  },
+  {
+    "title": "Szülők Akadémiája",
+    "url": "/szulok-akademiaja",
+    "content": "5 alkalmas, kiscsoportos programsorozat sportszülőknek: versenyhelyzet, kudarcok, egyensúly sport–iskola–család.",
+    "keywords": ["sportszülő", "gyermek sport", "verseny stressz", "támogató szülői szerep"],
+    "synonyms": ["szulok akademiaja", "szulo kepzes", "sportolo gyerek"],
+    "tags": ["program", "sport", "szülők"],
+    "date": "2025-10-14"
   },
   {
     "title": "Podcast",
     "url": "/podcast",
-    "content": "Lehet hibázni – podcast epizódok elérhetősége."
+    "content": "Lehet hibázni – podcast epizódok és elérhetőség.",
+    "keywords": ["podcast", "Lehet hibázni", "Z75 Production", "pszichológia podcast", "sportszülő", "bántalmazás"],
+    "synonyms": ["musor", "adas", "lehethibazni"],
+    "tags": ["média"],
+    "date": "2025-10-14"
   },
   {
     "title": "Kapcsolat",
     "url": "/kapcsolat",
-    "content": "Időpontegyeztetés, elérhetőségek, üzenet."
+    "content": "Időpontegyeztetés, elérhetőségek, üzenet.",
+    "keywords": ["kapcsolat", "időpont egyeztetés", "email", "telefon", "Debrecen"],
+    "synonyms": ["elerhetoseg", "idopontfoglalas", "uzenetkuldes"],
+    "tags": ["kapcsolat"],
+    "date": "2025-10-14"
   }
 ]

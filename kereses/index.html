@@ -88,90 +88,127 @@
   <!-- Fuse.js (könnyű fuzzy kereső) -->
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
 
-  <script>
-    (async function() {
-      const params = new URLSearchParams(location.search);
-      const query = (params.get('q') || '').trim();
-      const qInput = document.getElementById('q');
-      const info = document.getElementById('results-info');
-      const list = document.getElementById('results');
+<script>
+  (async function () {
+    // ---- beállítások (HU) ----
+    const INDEX_PATH = '/static/search-index.json';
+    const MSG = {
+      type: 'Írj be legalább 2 karaktert a kereséshez.',
+      none: (q) => `Nincs találat a(z) „${q}” kifejezésre.`,
+      some: (n, q) => `${n} találat a(z) „${q}” kifejezésre.`,
+    };
 
-      // URL-ből érkező lekérdezés kitöltése
-      qInput.value = query;
+    // ---- util: ékezet-kezelés + kiemelés ----
+    const fold = (s='') => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const hi = (text, qRaw) => {
+      if (!qRaw) return text;
+      const re = new RegExp(`(${escapeRe(qRaw)})`, 'ig');
+      return text.replace(re, '<mark>$1</mark>');
+    };
 
-      // HU oldal → magyar index
-      const indexPath = '/static/search-index.json';
+    // ---- DOM ----
+    const params = new URLSearchParams(location.search);
+    const qRaw = (params.get('q') || '').trim();
+    const qInput = document.getElementById('q');
+    const info = document.getElementById('results-info');
+    const list = document.getElementById('results');
+    qInput.value = qRaw;
 
-      // Index betöltése
-      let data = [];
-      try {
-        const res = await fetch(indexPath, { cache: 'no-store' });
-        data = await res.json();
-      } catch (e) {
-        info.textContent = 'Nem sikerült betölteni a kereső indexet.';
-        return;
-      }
+    // ---- index betöltés ----
+    let raw = [];
+    try {
+      const res = await fetch(INDEX_PATH, { cache: 'no-store' });
+      raw = await res.json();
+    } catch {
+      info.textContent = 'Nem sikerült betölteni a kereső indexet.';
+      return;
+    }
 
-      // Fuse init
-      const fuse = new Fuse(data, {
-        includeScore: true,
-        minMatchCharLength: 2,
-        threshold: 0.4,
-        keys: [
-          { name: 'title', weight: 0.6 },
-          { name: 'content', weight: 0.4 }
-        ]
+    // ---- normálás Fuse-hoz (ékezetek nélkül), de megőrizzük a megjelenítendő értékeket is ----
+    const data = raw.map(item => ({
+      ...item,
+      title_o: item.title || '',
+      content_o: item.content || '',
+      title: fold(item.title || ''),
+      content: fold(item.content || ''),
+      keywords: (item.keywords || []).map(fold),
+      synonyms: (item.synonyms || []).map(fold),
+      tags: (item.tags || []).map(fold),
+      _date: new Date(item.date || '2000-01-01').getTime()
+    }));
+
+    // ---- Fuse init (súlyozott mezők + extended search) ----
+    const fuse = new Fuse(data, {
+      includeScore: true,
+      useExtendedSearch: true,
+      minMatchCharLength: 2,
+      threshold: 0.34,
+      keys: [
+        { name: 'title',    weight: 0.7 },
+        { name: 'keywords', weight: 0.6 },
+        { name: 'synonyms', weight: 0.5 },
+        { name: 'content',  weight: 0.4 },
+        { name: 'tags',     weight: 0.3 }
+      ]
+    });
+
+    // ---- keresés ----
+    const query = fold(qRaw);
+    let results = [];
+    if (query.length >= 2) {
+      results = fuse.search(query).slice(0, 50); // több találat engedélyezve
+      // enyhe "frissesség" boost (újabb tartalom előrébb)
+      results.sort((a, b) => {
+        const boostA = a.item._date / 1e13;
+        const boostB = b.item._date / 1e13;
+        return (a.score - boostA) - (b.score - boostB);
       });
+      results = results.slice(0, 20); // végül max 20 megjelenítés
+    }
 
-      let results = [];
-      if (query.length >= 2) {
-        results = fuse.search(query).slice(0, 20); // max 20 találat
-      }
+    // ---- render ----
+    list.innerHTML = '';
+    if (!qRaw) {
+      info.textContent = MSG.type;
+      return;
+    }
+    info.textContent = results.length ? MSG.some(results.length, qRaw) : MSG.none(qRaw);
 
-      // Megjelenítés
-      list.innerHTML = '';
-      if (!query) {
-        info.textContent = 'Írj be legalább 2 karaktert a kereséshez.';
-        return;
-      }
+    results.forEach(r => {
+      const it = r.item;
+      const snippet = it.content_o || '';
+      const short = snippet.length > 160 ? snippet.slice(0, 160) + '…' : snippet;
 
-      info.textContent = results.length
-        ? `${results.length} találat a(z) „${query}” kifejezésre.`
-        : `Nincs találat a(z) „${query}” kifejezésre.`;
+      const a = document.createElement('a');
+      a.className = 'list-group-item list-group-item-action';
+      a.href = it.url;
+      a.innerHTML = `
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">${hi(it.title_o, qRaw)}</h5>
+        </div>
+        <p class="mb-1">${hi(short, qRaw)}</p>
+        <small class="text-muted">${it.url}</small>
+      `;
+      list.appendChild(a);
+    });
 
-      results.forEach(r => {
-        const item = r.item;
-        const snippet = (item.content || '');
-        const short = snippet.length > 160 ? snippet.slice(0, 160) + '…' : snippet;
+    // fókusz az első találatra
+    if (results.length) {
+      const first = list.querySelector('a');
+      if (first) first.focus();
+    }
 
-        const a = document.createElement('a');
-        a.className = 'list-group-item list-group-item-action';
-        a.href = item.url;
-        a.innerHTML = `
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">${item.title}</h5>
-          </div>
-          <p class="mb-1">${short}</p>
-          <small class="text-muted">${item.url}</small>
-        `;
-        list.appendChild(a);
-      });
+    // URL frissítése beküldéskor
+    document.getElementById('site-search-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const newQ = qInput.value.trim();
+      const url = new URL(location.href);
+      if (newQ) url.searchParams.set('q', newQ); else url.searchParams.delete('q');
+      location.href = url.toString();
+    });
+  })();
+</script>
 
-      // Fókusz az első találatra (billentyűzetbarát)
-      if (results.length) {
-        const first = list.querySelector('a');
-        if (first) first.focus();
-      }
-
-      // URL frissítése beküldéskor (bookmarkolható)
-      document.getElementById('site-search-form').addEventListener('submit', (e) => {
-        e.preventDefault();
-        const newQ = qInput.value.trim();
-        const url = new URL(location.href);
-        if (newQ) url.searchParams.set('q', newQ); else url.searchParams.delete('q');
-        location.href = url.toString();
-      });
-    })();
-  </script>
 </body>
 </html>

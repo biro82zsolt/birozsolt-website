@@ -86,92 +86,128 @@
   </main>
 
   <!-- Fuse.js (lightweight fuzzy search) -->
-  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+<script>
+  (async function () {
+    // ---- settings (EN) ----
+    const INDEX_PATH = '/static/search-index-en.json';
+    const MSG = {
+      type: 'Type at least 2 characters to search.',
+      none: (q) => `No results for “${q}”.`,
+      some: (n, q) => `${n} ${n === 1 ? 'result' : 'results'} for “${q}”.`
+    };
 
-  <script>
-    (async function() {
-      const params = new URLSearchParams(location.search);
-      const query = (params.get('q') || '').trim();
-      const qInput = document.getElementById('q');
-      const info = document.getElementById('results-info');
-      const list = document.getElementById('results');
+    // ---- utils: accent folding + highlight ----
+    const fold = (s='') => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const hi = (text, qRaw) => {
+      if (!qRaw) return text;
+      const re = new RegExp(`(${escapeRe(qRaw)})`, 'ig');
+      return text.replace(re, '<mark>$1</mark>');
+    };
 
-      // Prefill query from URL
-      qInput.value = query;
+    // ---- DOM ----
+    const params = new URLSearchParams(location.search);
+    const qRaw = (params.get('q') || '').trim();
+    const qInput = document.getElementById('q');
+    const info = document.getElementById('results-info');
+    const list = document.getElementById('results');
+    qInput.value = qRaw;
 
-      // Choose English index for this page
-      const indexPath = '/static/search-index-en.json';
+    // ---- load index ----
+    let raw = [];
+    try {
+      const res = await fetch(INDEX_PATH, { cache: 'no-store' });
+      raw = await res.json();
+    } catch {
+      info.textContent = 'Could not load search index.';
+      return;
+    }
 
-      // Fetch index
-      let data = [];
-      try {
-        const res = await fetch(indexPath, { cache: 'no-store' });
-        data = await res.json();
-      } catch (e) {
-        info.textContent = 'Could not load search index.';
-        return;
-      }
+    // ---- normalize for Fuse (accent-free), keep originals for display ----
+    const data = raw.map(item => ({
+      ...item,
+      title_o: item.title || '',
+      content_o: item.content || '',
+      title: fold(item.title || ''),
+      content: fold(item.content || ''),
+      keywords: (item.keywords || []).map(fold),
+      synonyms: (item.synonyms || []).map(fold),
+      tags: (item.tags || []).map(fold),
+      _date: new Date(item.date || '2000-01-01').getTime()
+    }));
 
-      // Init Fuse
-      const fuse = new Fuse(data, {
-        includeScore: true,
-        minMatchCharLength: 2,
-        threshold: 0.4,
-        keys: [
-          { name: 'title', weight: 0.6 },
-          { name: 'content', weight: 0.4 }
-        ]
+    // ---- Fuse (weighted fields + extended search) ----
+    const fuse = new Fuse(data, {
+      includeScore: true,
+      useExtendedSearch: true,
+      minMatchCharLength: 2,
+      threshold: 0.34,
+      keys: [
+        { name: 'title',    weight: 0.7 },
+        { name: 'keywords', weight: 0.6 },
+        { name: 'synonyms', weight: 0.5 },
+        { name: 'content',  weight: 0.4 },
+        { name: 'tags',     weight: 0.3 }
+      ]
+    });
+
+    // ---- search ----
+    const query = fold(qRaw);
+    let results = [];
+    if (query.length >= 2) {
+      results = fuse.search(query).slice(0, 50);
+      // slight freshness boost
+      results.sort((a, b) => {
+        const boostA = a.item._date / 1e13;
+        const boostB = b.item._date / 1e13;
+        return (a.score - boostA) - (b.score - boostB);
       });
+      results = results.slice(0, 20);
+    }
 
-      let results = [];
-      if (query.length >= 2) {
-        results = fuse.search(query).slice(0, 20);
-      }
+    // ---- render ----
+    list.innerHTML = '';
+    if (!qRaw) {
+      info.textContent = MSG.type;
+      return;
+    }
+    info.textContent = results.length ? MSG.some(results.length, qRaw) : MSG.none(qRaw);
 
-      // Render
-      list.innerHTML = '';
-      if (!query) {
-        info.textContent = 'Type at least 2 characters to search.';
-        return;
-      }
+    results.forEach(r => {
+      const it = r.item;
+      const snippet = it.content_o || '';
+      const short = snippet.length > 160 ? snippet.slice(0, 160) + '…' : snippet;
 
-      info.textContent = results.length
-        ? `${results.length} ${results.length === 1 ? 'result' : 'results'} for “${query}”.`
-        : `No results for “${query}”.`;
+      const a = document.createElement('a');
+      a.className = 'list-group-item list-group-item-action';
+      a.href = it.url;
+      a.innerHTML = `
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">${hi(it.title_o, qRaw)}</h5>
+        </div>
+        <p class="mb-1">${hi(short, qRaw)}</p>
+        <small class="text-muted">${it.url}</small>
+      `;
+      list.appendChild(a);
+    });
 
-      results.forEach(r => {
-        const item = r.item;
-        const snippet = (item.content || '');
-        const short = snippet.length > 160 ? snippet.slice(0, 160) + '…' : snippet;
+    // focus first result for keyboard users
+    if (results.length) {
+      const first = list.querySelector('a');
+      if (first) first.focus();
+    }
 
-        const a = document.createElement('a');
-        a.className = 'list-group-item list-group-item-action';
-        a.href = item.url;
-        a.innerHTML = `
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">${item.title}</h5>
-          </div>
-          <p class="mb-1">${short}</p>
-          <small class="text-muted">${item.url}</small>
-        `;
-        list.appendChild(a);
-      });
+    // update URL on submit
+    document.getElementById('site-search-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const newQ = qInput.value.trim();
+      const url = new URL(location.href);
+      if (newQ) url.searchParams.set('q', newQ); else url.searchParams.delete('q');
+      location.href = url.toString();
+    });
+  })();
+</script>
 
-      // Focus first result for keyboard users
-      if (results.length) {
-        const first = list.querySelector('a');
-        if (first) first.focus();
-      }
-
-      // Update URL on submit (bookmarkable)
-      document.getElementById('site-search-form').addEventListener('submit', (e) => {
-        e.preventDefault();
-        const newQ = qInput.value.trim();
-        const url = new URL(location.href);
-        if (newQ) url.searchParams.set('q', newQ); else url.searchParams.delete('q');
-        location.href = url.toString();
-      });
-    })();
-  </script>
 </body>
 </html>
