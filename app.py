@@ -123,9 +123,9 @@ def trainingload_index():
 def workshops_index():
     return render_template("sportscience/workshops.html")
 
-@app.route("/szulok-akademiaja")
-def szulokakademiaja_index():
-    return render_template("szulok-akademiaja/index.html")
+@app.route("/szuloi-zona")
+def szuloizona_index():
+    return render_template("szuloi-zona/index.html")
 
 @app.route("/kereses")
 def kereses():
