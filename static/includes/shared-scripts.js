@@ -111,7 +111,7 @@
         return { href: buildPath(dirs, FILE_MAP_REV[file] || file), targetLang:'hu', sourceLang:'en' };
       }
     }
-    var looksHU = /(sporttudomany|egyeni|csoportos|sportpszichologia|diagnosztika|coaching|csalad|podcast|kerdoiv|kapcsolat|rolam|hu)/.test(path) || path === '/';
+    var looksHU = /(sporttudomany|egyeni|csoportos|sportpszichologia|diagnosztika|coaching|csalad|podcast|kerdoiv|kapcsolat|rolam|vegzettsegek|hu)/.test(path) || path === '/';
     return { href: looksHU ? '/en' : '/', targetLang: looksHU ? 'en':'hu', sourceLang: looksHU ? 'hu':'en' };
   }
 
