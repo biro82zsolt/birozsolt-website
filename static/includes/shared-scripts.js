@@ -32,7 +32,9 @@
     'rolam':'about',
     'blog':'blog',
     'info':'info',
-    'adatvedelem':'privacy'
+    'adatvedelem':'privacy',
+    'vegzettsegek':'qualifications'
+
   };
   var FILE_MAP = {
     'index.html':'index.html',

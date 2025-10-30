@@ -135,6 +135,14 @@ def kereses():
 def search():
     return render_template("search/index.html")
 
+@app.route("/vegzettsegek")
+def vegzettsegek():
+    return render_template("vegzettsegek/index.html")
+
+@app.route("/qualifications")
+def qualifications():
+    return render_template("qualifications/index.html")
+
 # --- Run ---
 if __name__ == "__main__":
     app.run(debug=True)

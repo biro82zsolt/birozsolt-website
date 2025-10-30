@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Early theme to avoid FOUC -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        document.documentElement.style.backgroundColor = "#121212";
+        document.documentElement.classList.add("dark-mode");
+      }
+    })();
+  </script>
+
+  <title>Qualifications and Professional Profile – Zsolt Bíró, Psychologist</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="/static/includes/style.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico" />
+
+  <!-- Cookie notice -->
+  <script src="/static/js/cookie.js" defer></script>
+
+  <style>
+    /* Higher-contrast muted text in dark mode */
+    body.dark-mode .text-muted { color: #bfc4d1 !important; }
+    /* Optional: card & divider contrast in dark mode */
+    body.dark-mode .card { background-color: #1e1f25; border-color: rgba(255,255,255,0.10); color: #e7eaf3; }
+    body.dark-mode .border-secondary { border-color: rgba(255,255,255,0.20) !important; }
+  </style>
+</head>
+<body>
+
+<!-- Header placeholder -->
+<div id="header-placeholder"></div>
+
+<!-- Page-specific content -->
+<main class="section" role="main">
+  <div class="container py-5">
+
+    <!-- Page title -->
+    <div class="text-center mb-4">
+      <h1 class="mb-2">Qualifications & Professional Profile</h1>
+      <p class="text-muted mb-0">Studies, professional experience, additional training, publications, and memberships — clearly structured with dates.</p>
+    </div>
+
+    <!-- Quick TOC -->
+    <div class="d-flex flex-wrap gap-2 justify-content-center mb-4">
+      <a class="btn btn-outline-secondary btn-sm" href="#studies">Studies</a>
+      <a class="btn btn-outline-secondary btn-sm" href="#experience">Professional Experience</a>
+      <a class="btn btn-outline-secondary btn-sm" href="#training">Additional Training</a>
+      <a class="btn btn-outline-secondary btn-sm" href="#publications">Publications</a>
+      <a class="btn btn-outline-secondary btn-sm" href="#memberships">Memberships</a>
+      <a class="btn btn-outline-secondary btn-sm" href="#contact-cta">Contact</a>
+    </div>
+
+    <!-- Two-column grid -->
+    <div class="row g-4">
+
+      <!-- Left column -->
+      <div class="col-12 col-lg-5">
+        <!-- Studies -->
+        <section id="studies" class="card shadow-sm mb-4">
+          <div class="card-body">
+            <h2 class="h4 card-title mb-3">Studies</h2>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-3">
+                <div class="small text-muted">2017–2019</div>
+                <div class="fw-semibold">Postgraduate Training in Sport Psychology</div>
+                <div>Semmelweis University (SOTE)</div>
+              </li>
+              <li class="mb-3">
+                <div class="small text-muted">2014–2016</div>
+                <div class="fw-semibold">Counselling Psychologist (Career & Work Counselling)</div>
+                <div>Eötvös Loránd University (ELTE)</div>
+              </li>
+              <li class="mb-3">
+                <div class="small text-muted">2007–2008</div>
+                <div class="fw-semibold">Erasmus Scholarship</div>
+                <div>Katholieke Universiteit Leuven</div>
+              </li>
+              <li class="mb-3">
+                <div class="small text-muted">2005–2010</div>
+                <div class="fw-semibold">Psychologist; English Translator in Psychology</div>
+                <div>University of Debrecen</div>
+              </li>
+              <li>
+                <div class="small text-muted">2001–2005</div>
+                <div class="fw-semibold">Primary School Teacher – Physical Education specialization</div>
+                <div>Kölcsey Ferenc Reformed Teacher Training College</div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Additional training -->
+        <section id="training" class="card shadow-sm">
+          <div class="card-body">
+            <h2 class="h4 card-title mb-3">Additional Training</h2>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><strong>Autogenic Training Therapist</strong><br><span class="text-muted small">Hungarian Association for Relaxation and Symbol Therapy, 2015–2016</span></li>
+              <li class="mb-2"><strong>Trainer Certification – Developing core skills for lifelong learning among socially disadvantaged groups</strong><br><span class="text-muted small">Proskills – Luxembourg, Finland, 2012</span></li>
+              <li class="mb-2"><strong>Talent Counselling, Underachieving Gifted Students</strong><br><span class="text-muted small">Hungarian Association of Talent Support Organizations, 2010</span></li>
+              <li><strong>Family Therapy – modality-specific training</strong><br><span class="text-muted small">Hungarian Association for Family Therapy, 2010–</span></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right column -->
+      <div class="col-12 col-lg-7">
+        <!-- Professional experience -->
+        <section id="experience" class="card shadow-sm">
+          <div class="card-body">
+            <h2 class="h4 card-title mb-3">Professional Experience</h2>
+            <div class="vstack gap-3">
+              <div>
+                <div class="small text-muted">2015–</div>
+                <div class="fw-semibold">Debrecen Football Academy</div>
+                <p class="mb-0">Sport Psychologist — mental preparation of youth athletes, performance support, and sport psychology training.</p>
+              </div>
+              <div>
+                <div class="small text-muted">2015–2021</div>
+                <div class="fw-semibold">University of Debrecen</div>
+                <p class="mb-0">Lecturer, Assistant Lecturer — teaching psychology and pedagogy courses; thesis supervision and research mentoring.</p>
+              </div>
+              <div>
+                <div class="small text-muted">2014–</div>
+                <div class="fw-semibold">Private Practice — Psychologist & Sport Psychologist</div>
+                <p class="mb-0">Individual counselling and sport psychology; performance-focused and self-knowledge oriented work with youth and adults.</p>
+              </div>
+              <div>
+                <div class="small text-muted">2024–</div>
+                <div class="fw-semibold">Research & Development</div>
+                <p class="mb-0">Anthropometric and developmental psychology projects: modelling of morphological age (MK), performance and developmental indicators (Python/Django-based systems).</p>
+              </div>
+              <div>
+                <div class="small text-muted">2010–2015</div>
+                <div class="fw-semibold">School Psychologist</div>
+                <p class="mb-0">Educational Service Centre; Tóth Árpád High School; partner schools of Alföld Vocational Training.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Memberships -->
+        <section id="memberships" class="card shadow-sm mt-4">
+          <div class="card-body">
+            <h2 class="h4 card-title mb-3">Memberships & Professional Communities</h2>
+            <ul class="list-unstyled mb-0">
+              <li class="py-2 border-bottom border-secondary">Hungarian Psychological Association</li>
+              <li class="py-2 border-bottom border-secondary">Hungarian Association for Relaxation and Symbol Therapy</li>
+              <li class="py-2">Hungarian Association for Family Therapy</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <!-- /Right column -->
+
+    </div>
+    <!-- /row -->
+
+    <!-- Publications full width -->
+    <section id="publications" class="card shadow-sm mt-4">
+      <div class="card-body">
+        <h2 class="h4 card-title mb-3">Publications & Talks</h2>
+        <ul class="mb-0">
+          <li>Zsolt Bíró (2009). Examination of causal attributions following victory and defeat in press statements at the Beijing Olympics. In: M. Kocsis (Ed.), Proceedings of the XXIX National Scientific Students’ Associations Conference (OTDK) – Section of Education, Psychology, Cultural and Library Sciences, Pécs, p. 148. (Hungarian)</li>
+          <li>Róbert Orosz – Zsolt Bíró (2009). The role of talent conceptions in developing sport talent. In: Tatjana Varjú Petrebic – János Vida (Eds.), III. Talent Day. In the Service of Talents – 1st International Talent Support Conference, Magyarkanizsa. Bolyai Farkas Foundation for Students Learning in Hungarian, Zenta, pp. 125–132. (Hungarian)</li>
+          <li>Róbert Orosz – Zsolt Bíró (2009). At the Gate of Success. The Psychology of Football Talent. Kék Bolygó Talent Point, Debrecen. (Hungarian)</li>
+          <li>Zsolt Bíró, Judit Páskuné Kiss (2013). The role of extracurricular activities and intrapsychic characteristics related to self-actualization among students in the Arany János Dormitory–Vocational School Programme. In: Judit Páskuné Kiss (Ed.), Psychological and Sociological Factors in Access to Talent Support Services. Research Report, pp. 87–108. (Hungarian)</li>
+          <li>Zsolt Bíró, Zsuzsanna Mándy (2013). The distribution of talent support services by settlement characteristics. In: Judit Páskuné Kiss (Ed.), Psychological and Sociological Factors in Access to Talent Support Services. Research Report, pp. 137–163. (Hungarian)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact-cta" class="mt-5 text-center">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body p-4 p-md-5">
+          <p class="text-muted mb-2">Available: online and in-person consultations</p>
+          <h2 class="h4 mb-3">Have a question or want to book an appointment?</h2>
+          <a href="/contact" class="btn btn-primary">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- Footer placeholder -->
+<div id="footer-placeholder"></div>
+
+<!-- Bootstrap bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Shared JS -->
+<script src="/static/includes/shared-scripts.js?v=fix-ready"></script>
+</body>
+</html>
