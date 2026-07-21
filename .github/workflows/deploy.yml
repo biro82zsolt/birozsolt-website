@@ -19,9 +19,11 @@ jobs:
         server: ftp.zsoltbiro.hu
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /public_html/
-        local-dir: ./   # A projekt gyökere
         protocol: ftps
+        security: loose
+        port: 21
+        server-dir: ./
+        local-dir: ./
         exclude: |
           **/.git*
           **/.github*
