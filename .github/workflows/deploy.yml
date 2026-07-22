@@ -33,8 +33,6 @@ jobs:
           .github/**
           **/.github
           **/.github/**
-          **/.idea
-          **/.idea/**
           **/.venv*
           **/venv*
           **/__pycache__*
