@@ -23,6 +23,7 @@ jobs:
         security: loose
         port: 21
         local-dir: ./
+        server-dir: ./
         dangerous-clean-slate: true
         exclude: |
           .git
@@ -44,3 +45,5 @@ jobs:
           **/*.pyo
           **/*.pyd
           **/*.png
+          **/node_modules/**
+          **/.idea/**
