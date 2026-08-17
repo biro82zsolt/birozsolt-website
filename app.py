@@ -19,9 +19,9 @@ def egyeni():
 def individual():
     return render_template("individual/index.html")
 
-@app.route("/csoportos")
-def csoportos():
-    return render_template("csoportos/index.html")
+@app.route("/trening")
+def trening():
+    return render_template("trening/index.html")
 
 @app.route("/group")
 def group():
