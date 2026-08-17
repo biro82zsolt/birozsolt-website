@@ -21,7 +21,7 @@
   var DIR_MAP = {
     'sporttudomany':'sportscience',
     'egyeni':'individual',
-    'csoportos':'group',
+    'trening':'group',
     'sportpszichologia':'sportpsychology',
     'diagnosztika':'diagnostic',
     'coaching':'coaching',
