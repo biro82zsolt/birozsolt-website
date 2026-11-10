@@ -99,9 +99,9 @@ def wellness_index():
 def tehetseg_index():
     return render_template("sporttudomany/tehetseg.html")
 
-@app.route("/sporttudomany/terheles.html")
-def terheles_index():
-    return render_template("sporttudomany/terheles.html")
+@app.route("/sporttudomany/performance-hu.html")
+def performancehu_index():
+    return render_template("sporttudomany/performance-hu.html")
 
 @app.route("/sporttudomany/workshopok.html")
 def workshopok_index():
@@ -115,9 +115,9 @@ def wellnessen_index():
 def talentid_index():
     return render_template("sportscience/talent-id.html")
 
-@app.route("/sportscience/training-load.html")
-def trainingload_index():
-    return render_template("sportscience/training-load.html")
+@app.route("/sportscience/performance.html")
+def performance_index():
+    return render_template("sportscience/performance.html")
 
 @app.route("/sportscience/workshops.html")
 def workshops_index():
